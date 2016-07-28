@@ -273,16 +273,15 @@
     <None Include="Resources\default_produto_photo.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\caixa_abrir.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\default_logo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\caixa_abrir1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="controle_de_estoque.ico" />
+    <None Include="Resources\admin_background.jpg" />
+    <None Include="Resources\caixa_abrir.png" />
+    <Content Include="Resources\caixa_abrir1.jpg" />
+    <None Include="Resources\login_background1.png" />
+    <None Include="Resources\Icone_logoff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

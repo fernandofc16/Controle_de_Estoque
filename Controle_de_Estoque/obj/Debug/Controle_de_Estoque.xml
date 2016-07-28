@@ -22,12 +22,22 @@ Controle_de_Estoque
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Controle_de_Estoque.My.Resources.Resources.admin_background">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Controle_de_Estoque.My.Resources.Resources.caixa_abrir">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Controle_de_Estoque.My.Resources.Resources.caixa_abrir1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Controle_de_Estoque.My.Resources.Resources.caixa_abrir2">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -52,6 +62,11 @@ Controle_de_Estoque
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Controle_de_Estoque.My.Resources.Resources.Icone_logoff">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Controle_de_Estoque.My.Resources.Resources.itextsharp">
 <summary>
   Looks up a localized resource of type System.Byte[].
@@ -65,6 +80,11 @@ Controle_de_Estoque
 <member name="P:Controle_de_Estoque.My.Resources.Resources.itextsharp_xtra">
 <summary>
   Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:Controle_de_Estoque.My.Resources.Resources.login_background">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 </members>

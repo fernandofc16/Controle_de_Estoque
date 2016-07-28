@@ -641,15 +641,16 @@ Public Class Caixa
     End Sub
 
     Private Sub cancelItem()
-        If (ProdutosArray.Count <> 0) Then
-            If (CInt(QuantidadesArray(QuantidadesArray.Count - 1)) > 1) Then
-                QuantidadesArray(QuantidadesArray.Count - 1) = CInt(QuantidadesArray(QuantidadesArray.Count - 1)) - 1
+        If (ProdutosArray.Count <> 0 And produtosListView.SelectedItems.Count = 1) Then
+            Dim IndexProd As Integer = produtosListView.FocusedItem.Index
+            If (CInt(QuantidadesArray(IndexProd)) > 1) Then
+                QuantidadesArray(IndexProd) = CInt(QuantidadesArray(IndexProd)) - 1
                 UpdateListView()
                 UpdateTotal()
             Else
-                ProdutosArray.RemoveAt(ProdutosArray.Count - 1)
-                PreçosArray.RemoveAt(PreçosArray.Count - 1)
-                QuantidadesArray.RemoveAt(QuantidadesArray.Count - 1)
+                ProdutosArray.RemoveAt(IndexProd)
+                PreçosArray.RemoveAt(IndexProd)
+                QuantidadesArray.RemoveAt(IndexProd)
                 UpdateListView()
                 UpdateTotal()
             End If
@@ -1025,6 +1026,10 @@ Public Class Caixa
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles retiradaCaixaButton.Click
         Retirada_Pagamentos.funcRetirada = userLogged
         Retirada_Pagamentos.ShowDialog()
+    End Sub
+
+    Private Sub produtosListView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles produtosListView.SelectedIndexChanged
+
     End Sub
 
 End Class

@@ -34,6 +34,7 @@ Partial Class Login
         'userLabel
         '
         Me.userLabel.AutoSize = True
+        Me.userLabel.BackColor = System.Drawing.Color.Transparent
         Me.userLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.userLabel.Location = New System.Drawing.Point(9, 13)
         Me.userLabel.Name = "userLabel"
@@ -52,6 +53,7 @@ Partial Class Login
         'passwordUser
         '
         Me.passwordUser.AutoSize = True
+        Me.passwordUser.BackColor = System.Drawing.Color.Transparent
         Me.passwordUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.passwordUser.Location = New System.Drawing.Point(9, 69)
         Me.passwordUser.Name = "passwordUser"
@@ -71,13 +73,14 @@ Partial Class Login
         'rememberCheckBox
         '
         Me.rememberCheckBox.AutoSize = True
+        Me.rememberCheckBox.BackColor = System.Drawing.Color.Transparent
         Me.rememberCheckBox.Location = New System.Drawing.Point(175, 142)
         Me.rememberCheckBox.Name = "rememberCheckBox"
         Me.rememberCheckBox.Size = New System.Drawing.Size(93, 17)
         Me.rememberCheckBox.TabIndex = 4
         Me.rememberCheckBox.TabStop = False
         Me.rememberCheckBox.Text = "Lembrar Login"
-        Me.rememberCheckBox.UseVisualStyleBackColor = True
+        Me.rememberCheckBox.UseVisualStyleBackColor = False
         '
         'passwordTextBox
         '
@@ -92,7 +95,8 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(282, 189)
+        Me.BackgroundImage = Global.Controle_de_Estoque.My.Resources.Resources.login_background
+        Me.ClientSize = New System.Drawing.Size(284, 181)
         Me.Controls.Add(Me.passwordTextBox)
         Me.Controls.Add(Me.userLabel)
         Me.Controls.Add(Me.userTextBox)

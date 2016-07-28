@@ -37,6 +37,15 @@ Public Class Login
 
     End Sub
 
+    Private Sub Login_VisibleChange(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
+
+        If (Not rememberCheckBox.Checked) Then
+            userTextBox.Text = ""
+            passwordTextBox.Text = ""
+        End If
+
+    End Sub
+
     Private Sub rememberCheckBox_CheckStateChanged(sender As Object, e As EventArgs) Handles rememberCheckBox.CheckStateChanged
 
         If rememberCheckBox.Checked Then
@@ -65,7 +74,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub okButton_Click(sender As Object, e As EventArgs) Handles okButton.Click
+    Private Sub LogIn()
 
         Dim Query As String = "SELECT password, isAdmin, id FROM login WHERE user = @user;"
         Dim passwordBD As String = ""
@@ -122,6 +131,10 @@ Public Class Login
 
     End Sub
 
+    Private Sub okButton_Click(sender As Object, e As EventArgs) Handles okButton.Click
+        LogIn()
+    End Sub
+
     Private Sub registerDateLogged()
 
         Dim Query As String = "UPDATE login SET lastDateLogged = @date WHERE user = @user;"
@@ -146,6 +159,18 @@ Public Class Login
 
     Private Sub passwordTextBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles passwordTextBox.MaskInputRejected
         rememberCheckBox.Checked = False
+    End Sub
+
+    Private Sub passwordTextBox_EnterPressed(sender As Object, e As KeyEventArgs) Handles passwordTextBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            LogIn()
+        End If
+    End Sub
+
+    Private Sub userTextBox_EnterPressed(sender As Object, e As KeyEventArgs) Handles userTextBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            LogIn()
+        End If
     End Sub
 
 End Class

@@ -29,32 +29,6 @@ Partial Class Form_Admin
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Admin))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.logoEmpresaPictureBox = New System.Windows.Forms.PictureBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.formasDePagamentoTextBox = New System.Windows.Forms.TextBox()
-        Me.removerFormaDePagamentoButton = New System.Windows.Forms.Button()
-        Me.adicionarFormaDePagamentoButton = New System.Windows.Forms.Button()
-        Me.formasDePagamentoComboBox = New System.Windows.Forms.ComboBox()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.resumoRelatorioRadioButton = New System.Windows.Forms.RadioButton()
-        Me.completoRelatorioRadioButton = New System.Windows.Forms.RadioButton()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.nomeAdminTextBox = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.SMTPHostComboBox = New System.Windows.Forms.ComboBox()
-        Me.showPasswordAdminCheckBox = New System.Windows.Forms.CheckBox()
-        Me.userAdminTextBox = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.senhaAdminTextBox = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.emailSystemTextBox = New System.Windows.Forms.TextBox()
-        Me.openCaixaButton = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.adicionarLoteButton = New System.Windows.Forms.Button()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -95,7 +69,6 @@ Partial Class Form_Admin
         Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Data_validade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Data_Att = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.produtoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.idEmployeeTextBox = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -124,7 +97,6 @@ Partial Class Form_Admin
         Me.Endereço = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tel_Residencial = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tel_Celular = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fotoEmployeePictureBox = New System.Windows.Forms.PictureBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.datasRadioButton = New System.Windows.Forms.RadioButton()
         Me.nomesRadioButton = New System.Windows.Forms.RadioButton()
@@ -157,7 +129,6 @@ Partial Class Form_Admin
         Me.Label9 = New System.Windows.Forms.Label()
         Me.categoriaButtonsCaixaComboBox = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.categoriaPictureBox = New System.Windows.Forms.PictureBox()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.assinaturaDigitalRemoverButton = New System.Windows.Forms.Button()
@@ -182,24 +153,54 @@ Partial Class Form_Admin
         Me.assinaturaDigitalEmployeeTextBox = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.funcionariosCadComboBox = New System.Windows.Forms.ComboBox()
-        Me.imageFuncCadPictureBox = New System.Windows.Forms.PictureBox()
         Me.selecionarImagemOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.formasDePagamentoTextBox = New System.Windows.Forms.TextBox()
+        Me.removerFormaDePagamentoButton = New System.Windows.Forms.Button()
+        Me.adicionarFormaDePagamentoButton = New System.Windows.Forms.Button()
+        Me.formasDePagamentoComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.resumoRelatorioRadioButton = New System.Windows.Forms.RadioButton()
+        Me.completoRelatorioRadioButton = New System.Windows.Forms.RadioButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.nomeAdminTextBox = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.SMTPHostComboBox = New System.Windows.Forms.ComboBox()
+        Me.showPasswordAdminCheckBox = New System.Windows.Forms.CheckBox()
+        Me.userAdminTextBox = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.senhaAdminTextBox = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.emailSystemTextBox = New System.Windows.Forms.TextBox()
+        Me.ButtonLogOff = New System.Windows.Forms.Button()
+        Me.logoEmpresaPictureBox = New System.Windows.Forms.PictureBox()
+        Me.openCaixaButton = New System.Windows.Forms.Button()
+        Me.produtoPictureBox = New System.Windows.Forms.PictureBox()
+        Me.fotoEmployeePictureBox = New System.Windows.Forms.PictureBox()
+        Me.categoriaPictureBox = New System.Windows.Forms.PictureBox()
+        Me.imageFuncCadPictureBox = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        CType(Me.logoEmpresaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.produtosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.produtoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.employeeInfoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fotoEmployeePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         CType(Me.reportAccessDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         CType(Me.produtosCategoriasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.categoriaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
         CType(Me.produtosEQuantidadesFiadoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.logoEmpresaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.produtoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.fotoEmployeePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.categoriaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imageFuncCadPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -217,288 +218,6 @@ Partial Class Form_Admin
         Me.TabControl1.Size = New System.Drawing.Size(1012, 735)
         Me.TabControl1.TabIndex = 0
         Me.TabControl1.TabStop = False
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.logoEmpresaPictureBox)
-        Me.TabPage1.Controls.Add(Me.Label6)
-        Me.TabPage1.Controls.Add(Me.Label35)
-        Me.TabPage1.Controls.Add(Me.Label34)
-        Me.TabPage1.Controls.Add(Me.formasDePagamentoTextBox)
-        Me.TabPage1.Controls.Add(Me.removerFormaDePagamentoButton)
-        Me.TabPage1.Controls.Add(Me.adicionarFormaDePagamentoButton)
-        Me.TabPage1.Controls.Add(Me.formasDePagamentoComboBox)
-        Me.TabPage1.Controls.Add(Me.Label33)
-        Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.resumoRelatorioRadioButton)
-        Me.TabPage1.Controls.Add(Me.completoRelatorioRadioButton)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.Label44)
-        Me.TabPage1.Controls.Add(Me.nomeAdminTextBox)
-        Me.TabPage1.Controls.Add(Me.Label10)
-        Me.TabPage1.Controls.Add(Me.SMTPHostComboBox)
-        Me.TabPage1.Controls.Add(Me.showPasswordAdminCheckBox)
-        Me.TabPage1.Controls.Add(Me.userAdminTextBox)
-        Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Controls.Add(Me.senhaAdminTextBox)
-        Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.emailSystemTextBox)
-        Me.TabPage1.Controls.Add(Me.openCaixaButton)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1004, 709)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = " Principal"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'logoEmpresaPictureBox
-        '
-        Me.logoEmpresaPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
-        Me.logoEmpresaPictureBox.Location = New System.Drawing.Point(515, 350)
-        Me.logoEmpresaPictureBox.Name = "logoEmpresaPictureBox"
-        Me.logoEmpresaPictureBox.Size = New System.Drawing.Size(465, 325)
-        Me.logoEmpresaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.logoEmpresaPictureBox.TabIndex = 1000022
-        Me.logoEmpresaPictureBox.TabStop = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(67, 305)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(233, 24)
-        Me.Label6.TabIndex = 180
-        Me.Label6.Text = "Configuração do Relatório:"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(511, 148)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(167, 20)
-        Me.Label35.TabIndex = 179
-        Me.Label35.Text = "Forma de Pagamento:"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(511, 94)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(274, 20)
-        Me.Label34.TabIndex = 178
-        Me.Label34.Text = "Formas de Pagamentos Adicionados:"
-        '
-        'formasDePagamentoTextBox
-        '
-        Me.formasDePagamentoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.formasDePagamentoTextBox.Location = New System.Drawing.Point(515, 171)
-        Me.formasDePagamentoTextBox.Name = "formasDePagamentoTextBox"
-        Me.formasDePagamentoTextBox.Size = New System.Drawing.Size(276, 26)
-        Me.formasDePagamentoTextBox.TabIndex = 177
-        '
-        'removerFormaDePagamentoButton
-        '
-        Me.removerFormaDePagamentoButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.removerFormaDePagamentoButton.Location = New System.Drawing.Point(699, 203)
-        Me.removerFormaDePagamentoButton.Name = "removerFormaDePagamentoButton"
-        Me.removerFormaDePagamentoButton.Size = New System.Drawing.Size(92, 30)
-        Me.removerFormaDePagamentoButton.TabIndex = 176
-        Me.removerFormaDePagamentoButton.Text = "Remover"
-        Me.removerFormaDePagamentoButton.UseVisualStyleBackColor = True
-        '
-        'adicionarFormaDePagamentoButton
-        '
-        Me.adicionarFormaDePagamentoButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.adicionarFormaDePagamentoButton.Location = New System.Drawing.Point(515, 203)
-        Me.adicionarFormaDePagamentoButton.Name = "adicionarFormaDePagamentoButton"
-        Me.adicionarFormaDePagamentoButton.Size = New System.Drawing.Size(92, 30)
-        Me.adicionarFormaDePagamentoButton.TabIndex = 175
-        Me.adicionarFormaDePagamentoButton.Text = "Adicionar"
-        Me.adicionarFormaDePagamentoButton.UseVisualStyleBackColor = True
-        '
-        'formasDePagamentoComboBox
-        '
-        Me.formasDePagamentoComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.formasDePagamentoComboBox.FormattingEnabled = True
-        Me.formasDePagamentoComboBox.Items.AddRange(New Object() {"Dinheiro", "NULL"})
-        Me.formasDePagamentoComboBox.Location = New System.Drawing.Point(515, 117)
-        Me.formasDePagamentoComboBox.Name = "formasDePagamentoComboBox"
-        Me.formasDePagamentoComboBox.Size = New System.Drawing.Size(276, 28)
-        Me.formasDePagamentoComboBox.TabIndex = 174
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(591, 22)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(230, 24)
-        Me.Label33.TabIndex = 173
-        Me.Label33.Text = "Configurações do Sistema"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(34, 452)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(150, 20)
-        Me.Label5.TabIndex = 172
-        Me.Label5.Text = "Opção do Relatório:"
-        '
-        'resumoRelatorioRadioButton
-        '
-        Me.resumoRelatorioRadioButton.AutoSize = True
-        Me.resumoRelatorioRadioButton.Location = New System.Drawing.Point(201, 475)
-        Me.resumoRelatorioRadioButton.Name = "resumoRelatorioRadioButton"
-        Me.resumoRelatorioRadioButton.Size = New System.Drawing.Size(72, 17)
-        Me.resumoRelatorioRadioButton.TabIndex = 171
-        Me.resumoRelatorioRadioButton.Text = "Resumido"
-        Me.resumoRelatorioRadioButton.UseVisualStyleBackColor = True
-        '
-        'completoRelatorioRadioButton
-        '
-        Me.completoRelatorioRadioButton.AutoSize = True
-        Me.completoRelatorioRadioButton.Checked = True
-        Me.completoRelatorioRadioButton.Location = New System.Drawing.Point(201, 452)
-        Me.completoRelatorioRadioButton.Name = "completoRelatorioRadioButton"
-        Me.completoRelatorioRadioButton.Size = New System.Drawing.Size(74, 17)
-        Me.completoRelatorioRadioButton.TabIndex = 170
-        Me.completoRelatorioRadioButton.TabStop = True
-        Me.completoRelatorioRadioButton.Text = "Detalhado"
-        Me.completoRelatorioRadioButton.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(511, 305)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(165, 24)
-        Me.Label1.TabIndex = 137
-        Me.Label1.Text = "Logo da Empresa:"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(32, 383)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(52, 20)
-        Me.Label44.TabIndex = 136
-        Me.Label44.Text = "Email:"
-        '
-        'nomeAdminTextBox
-        '
-        Me.nomeAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nomeAdminTextBox.Location = New System.Drawing.Point(33, 119)
-        Me.nomeAdminTextBox.Name = "nomeAdminTextBox"
-        Me.nomeAdminTextBox.Size = New System.Drawing.Size(276, 26)
-        Me.nomeAdminTextBox.TabIndex = 1
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(29, 96)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(104, 20)
-        Me.Label10.TabIndex = 135
-        Me.Label10.Text = "Nome Admin:"
-        '
-        'SMTPHostComboBox
-        '
-        Me.SMTPHostComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SMTPHostComboBox.FormattingEnabled = True
-        Me.SMTPHostComboBox.Items.AddRange(New Object() {"@globomail.com", "@gmail.com", "@outlook.com", "@hotmail.com", "@yahoo.com.br", "@bol.com.br"})
-        Me.SMTPHostComboBox.Location = New System.Drawing.Point(317, 406)
-        Me.SMTPHostComboBox.Name = "SMTPHostComboBox"
-        Me.SMTPHostComboBox.Size = New System.Drawing.Size(166, 28)
-        Me.SMTPHostComboBox.TabIndex = 5
-        Me.SMTPHostComboBox.Text = "@outlook.com"
-        '
-        'showPasswordAdminCheckBox
-        '
-        Me.showPasswordAdminCheckBox.AutoSize = True
-        Me.showPasswordAdminCheckBox.Location = New System.Drawing.Point(216, 256)
-        Me.showPasswordAdminCheckBox.Name = "showPasswordAdminCheckBox"
-        Me.showPasswordAdminCheckBox.Size = New System.Drawing.Size(93, 17)
-        Me.showPasswordAdminCheckBox.TabIndex = 131
-        Me.showPasswordAdminCheckBox.TabStop = False
-        Me.showPasswordAdminCheckBox.Text = "Mostrar senha"
-        Me.showPasswordAdminCheckBox.UseVisualStyleBackColor = True
-        '
-        'userAdminTextBox
-        '
-        Me.userAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.userAdminTextBox.Location = New System.Drawing.Point(33, 171)
-        Me.userAdminTextBox.Name = "userAdminTextBox"
-        Me.userAdminTextBox.Size = New System.Drawing.Size(276, 26)
-        Me.userAdminTextBox.TabIndex = 2
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(29, 148)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(117, 20)
-        Me.Label4.TabIndex = 129
-        Me.Label4.Text = "Usuário Admin:"
-        '
-        'senhaAdminTextBox
-        '
-        Me.senhaAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.senhaAdminTextBox.Location = New System.Drawing.Point(33, 224)
-        Me.senhaAdminTextBox.Name = "senhaAdminTextBox"
-        Me.senhaAdminTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.senhaAdminTextBox.Size = New System.Drawing.Size(276, 26)
-        Me.senhaAdminTextBox.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(29, 200)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 20)
-        Me.Label3.TabIndex = 127
-        Me.Label3.Text = "Senha Admin:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(69, 22)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(261, 24)
-        Me.Label2.TabIndex = 124
-        Me.Label2.Text = "Informações do Administrador"
-        '
-        'emailSystemTextBox
-        '
-        Me.emailSystemTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.emailSystemTextBox.Location = New System.Drawing.Point(36, 406)
-        Me.emailSystemTextBox.Name = "emailSystemTextBox"
-        Me.emailSystemTextBox.Size = New System.Drawing.Size(276, 26)
-        Me.emailSystemTextBox.TabIndex = 4
-        '
-        'openCaixaButton
-        '
-        Me.openCaixaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.openCaixaButton.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.openCaixaButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.openCaixaButton.Location = New System.Drawing.Point(151, 581)
-        Me.openCaixaButton.Name = "openCaixaButton"
-        Me.openCaixaButton.Size = New System.Drawing.Size(200, 86)
-        Me.openCaixaButton.TabIndex = 9
-        Me.openCaixaButton.Text = "Abrir Caixa"
-        Me.openCaixaButton.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -929,16 +648,6 @@ Partial Class Form_Admin
         Me.Data_Att.ReadOnly = True
         Me.Data_Att.Width = 95
         '
-        'produtoPictureBox
-        '
-        Me.produtoPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
-        Me.produtoPictureBox.Location = New System.Drawing.Point(6, 45)
-        Me.produtoPictureBox.Name = "produtoPictureBox"
-        Me.produtoPictureBox.Size = New System.Drawing.Size(130, 135)
-        Me.produtoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.produtoPictureBox.TabIndex = 50
-        Me.produtoPictureBox.TabStop = False
-        '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.idEmployeeTextBox)
@@ -1217,16 +926,6 @@ Partial Class Form_Admin
         Me.Tel_Celular.Name = "Tel_Celular"
         Me.Tel_Celular.ReadOnly = True
         Me.Tel_Celular.Width = 110
-        '
-        'fotoEmployeePictureBox
-        '
-        Me.fotoEmployeePictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_profile_photo
-        Me.fotoEmployeePictureBox.Location = New System.Drawing.Point(719, 31)
-        Me.fotoEmployeePictureBox.Name = "fotoEmployeePictureBox"
-        Me.fotoEmployeePictureBox.Size = New System.Drawing.Size(230, 230)
-        Me.fotoEmployeePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.fotoEmployeePictureBox.TabIndex = 35
-        Me.fotoEmployeePictureBox.TabStop = False
         '
         'TabPage4
         '
@@ -1577,16 +1276,6 @@ Partial Class Form_Admin
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Selecionar Categoria:"
         '
-        'categoriaPictureBox
-        '
-        Me.categoriaPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
-        Me.categoriaPictureBox.Location = New System.Drawing.Point(845, 224)
-        Me.categoriaPictureBox.Name = "categoriaPictureBox"
-        Me.categoriaPictureBox.Size = New System.Drawing.Size(150, 150)
-        Me.categoriaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.categoriaPictureBox.TabIndex = 20
-        Me.categoriaPictureBox.TabStop = False
-        '
         'TabPage6
         '
         Me.TabPage6.Controls.Add(Me.Label42)
@@ -1864,6 +1553,342 @@ Partial Class Form_Admin
         Me.funcionariosCadComboBox.Size = New System.Drawing.Size(407, 28)
         Me.funcionariosCadComboBox.TabIndex = 2
         '
+        'selecionarImagemOpenFileDialog
+        '
+        Me.selecionarImagemOpenFileDialog.FileName = "OpenFileDialog1"
+        Me.selecionarImagemOpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *gif) | *.jpg; *.jpeg; *.jpe; *" &
+    ".jfif; *.png;  *gif"
+        Me.selecionarImagemOpenFileDialog.InitialDirectory = "C:\"
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.ButtonLogOff)
+        Me.TabPage1.Controls.Add(Me.logoEmpresaPictureBox)
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Controls.Add(Me.Label35)
+        Me.TabPage1.Controls.Add(Me.Label34)
+        Me.TabPage1.Controls.Add(Me.formasDePagamentoTextBox)
+        Me.TabPage1.Controls.Add(Me.removerFormaDePagamentoButton)
+        Me.TabPage1.Controls.Add(Me.adicionarFormaDePagamentoButton)
+        Me.TabPage1.Controls.Add(Me.formasDePagamentoComboBox)
+        Me.TabPage1.Controls.Add(Me.Label33)
+        Me.TabPage1.Controls.Add(Me.Label5)
+        Me.TabPage1.Controls.Add(Me.resumoRelatorioRadioButton)
+        Me.TabPage1.Controls.Add(Me.completoRelatorioRadioButton)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.Label44)
+        Me.TabPage1.Controls.Add(Me.nomeAdminTextBox)
+        Me.TabPage1.Controls.Add(Me.Label10)
+        Me.TabPage1.Controls.Add(Me.SMTPHostComboBox)
+        Me.TabPage1.Controls.Add(Me.showPasswordAdminCheckBox)
+        Me.TabPage1.Controls.Add(Me.userAdminTextBox)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Controls.Add(Me.senhaAdminTextBox)
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.emailSystemTextBox)
+        Me.TabPage1.Controls.Add(Me.openCaixaButton)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1004, 709)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = " Principal"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(25, 317)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(233, 24)
+        Me.Label6.TabIndex = 180
+        Me.Label6.Text = "Configuração do Relatório:"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(511, 148)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(167, 20)
+        Me.Label35.TabIndex = 179
+        Me.Label35.Text = "Forma de Pagamento:"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(511, 94)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(274, 20)
+        Me.Label34.TabIndex = 178
+        Me.Label34.Text = "Formas de Pagamentos Adicionados:"
+        '
+        'formasDePagamentoTextBox
+        '
+        Me.formasDePagamentoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.formasDePagamentoTextBox.Location = New System.Drawing.Point(515, 171)
+        Me.formasDePagamentoTextBox.Name = "formasDePagamentoTextBox"
+        Me.formasDePagamentoTextBox.Size = New System.Drawing.Size(276, 26)
+        Me.formasDePagamentoTextBox.TabIndex = 177
+        '
+        'removerFormaDePagamentoButton
+        '
+        Me.removerFormaDePagamentoButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.removerFormaDePagamentoButton.Location = New System.Drawing.Point(699, 203)
+        Me.removerFormaDePagamentoButton.Name = "removerFormaDePagamentoButton"
+        Me.removerFormaDePagamentoButton.Size = New System.Drawing.Size(92, 30)
+        Me.removerFormaDePagamentoButton.TabIndex = 176
+        Me.removerFormaDePagamentoButton.Text = "Remover"
+        Me.removerFormaDePagamentoButton.UseVisualStyleBackColor = True
+        '
+        'adicionarFormaDePagamentoButton
+        '
+        Me.adicionarFormaDePagamentoButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.adicionarFormaDePagamentoButton.Location = New System.Drawing.Point(515, 203)
+        Me.adicionarFormaDePagamentoButton.Name = "adicionarFormaDePagamentoButton"
+        Me.adicionarFormaDePagamentoButton.Size = New System.Drawing.Size(92, 30)
+        Me.adicionarFormaDePagamentoButton.TabIndex = 175
+        Me.adicionarFormaDePagamentoButton.Text = "Adicionar"
+        Me.adicionarFormaDePagamentoButton.UseVisualStyleBackColor = True
+        '
+        'formasDePagamentoComboBox
+        '
+        Me.formasDePagamentoComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.formasDePagamentoComboBox.FormattingEnabled = True
+        Me.formasDePagamentoComboBox.Items.AddRange(New Object() {"Dinheiro", "NULL"})
+        Me.formasDePagamentoComboBox.Location = New System.Drawing.Point(515, 117)
+        Me.formasDePagamentoComboBox.Name = "formasDePagamentoComboBox"
+        Me.formasDePagamentoComboBox.Size = New System.Drawing.Size(276, 28)
+        Me.formasDePagamentoComboBox.TabIndex = 174
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(511, 44)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(260, 24)
+        Me.Label33.TabIndex = 173
+        Me.Label33.Text = "Configurações de Pagamento"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(27, 425)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(150, 20)
+        Me.Label5.TabIndex = 172
+        Me.Label5.Text = "Opção do Relatório:"
+        '
+        'resumoRelatorioRadioButton
+        '
+        Me.resumoRelatorioRadioButton.AutoSize = True
+        Me.resumoRelatorioRadioButton.Location = New System.Drawing.Point(194, 448)
+        Me.resumoRelatorioRadioButton.Name = "resumoRelatorioRadioButton"
+        Me.resumoRelatorioRadioButton.Size = New System.Drawing.Size(72, 17)
+        Me.resumoRelatorioRadioButton.TabIndex = 171
+        Me.resumoRelatorioRadioButton.Text = "Resumido"
+        Me.resumoRelatorioRadioButton.UseVisualStyleBackColor = True
+        '
+        'completoRelatorioRadioButton
+        '
+        Me.completoRelatorioRadioButton.AutoSize = True
+        Me.completoRelatorioRadioButton.Checked = True
+        Me.completoRelatorioRadioButton.Location = New System.Drawing.Point(194, 425)
+        Me.completoRelatorioRadioButton.Name = "completoRelatorioRadioButton"
+        Me.completoRelatorioRadioButton.Size = New System.Drawing.Size(74, 17)
+        Me.completoRelatorioRadioButton.TabIndex = 170
+        Me.completoRelatorioRadioButton.TabStop = True
+        Me.completoRelatorioRadioButton.Text = "Detalhado"
+        Me.completoRelatorioRadioButton.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(31, 533)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(165, 24)
+        Me.Label1.TabIndex = 137
+        Me.Label1.Text = "Logo da Empresa:"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(25, 356)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(52, 20)
+        Me.Label44.TabIndex = 136
+        Me.Label44.Text = "Email:"
+        '
+        'nomeAdminTextBox
+        '
+        Me.nomeAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nomeAdminTextBox.Location = New System.Drawing.Point(33, 119)
+        Me.nomeAdminTextBox.Name = "nomeAdminTextBox"
+        Me.nomeAdminTextBox.Size = New System.Drawing.Size(276, 26)
+        Me.nomeAdminTextBox.TabIndex = 1
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(29, 96)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(104, 20)
+        Me.Label10.TabIndex = 135
+        Me.Label10.Text = "Nome Admin:"
+        '
+        'SMTPHostComboBox
+        '
+        Me.SMTPHostComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SMTPHostComboBox.FormattingEnabled = True
+        Me.SMTPHostComboBox.Items.AddRange(New Object() {"@globomail.com", "@gmail.com", "@outlook.com", "@hotmail.com", "@yahoo.com.br", "@bol.com.br"})
+        Me.SMTPHostComboBox.Location = New System.Drawing.Point(310, 379)
+        Me.SMTPHostComboBox.Name = "SMTPHostComboBox"
+        Me.SMTPHostComboBox.Size = New System.Drawing.Size(166, 28)
+        Me.SMTPHostComboBox.TabIndex = 5
+        Me.SMTPHostComboBox.Text = "@outlook.com"
+        '
+        'showPasswordAdminCheckBox
+        '
+        Me.showPasswordAdminCheckBox.AutoSize = True
+        Me.showPasswordAdminCheckBox.Location = New System.Drawing.Point(216, 256)
+        Me.showPasswordAdminCheckBox.Name = "showPasswordAdminCheckBox"
+        Me.showPasswordAdminCheckBox.Size = New System.Drawing.Size(93, 17)
+        Me.showPasswordAdminCheckBox.TabIndex = 131
+        Me.showPasswordAdminCheckBox.TabStop = False
+        Me.showPasswordAdminCheckBox.Text = "Mostrar senha"
+        Me.showPasswordAdminCheckBox.UseVisualStyleBackColor = True
+        '
+        'userAdminTextBox
+        '
+        Me.userAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.userAdminTextBox.Location = New System.Drawing.Point(33, 171)
+        Me.userAdminTextBox.Name = "userAdminTextBox"
+        Me.userAdminTextBox.Size = New System.Drawing.Size(276, 26)
+        Me.userAdminTextBox.TabIndex = 2
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(29, 148)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(117, 20)
+        Me.Label4.TabIndex = 129
+        Me.Label4.Text = "Usuário Admin:"
+        '
+        'senhaAdminTextBox
+        '
+        Me.senhaAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.senhaAdminTextBox.Location = New System.Drawing.Point(33, 224)
+        Me.senhaAdminTextBox.Name = "senhaAdminTextBox"
+        Me.senhaAdminTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.senhaAdminTextBox.Size = New System.Drawing.Size(276, 26)
+        Me.senhaAdminTextBox.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(29, 200)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(109, 20)
+        Me.Label3.TabIndex = 127
+        Me.Label3.Text = "Senha Admin:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(31, 44)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(261, 24)
+        Me.Label2.TabIndex = 124
+        Me.Label2.Text = "Informações do Administrador"
+        '
+        'emailSystemTextBox
+        '
+        Me.emailSystemTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.emailSystemTextBox.Location = New System.Drawing.Point(29, 379)
+        Me.emailSystemTextBox.Name = "emailSystemTextBox"
+        Me.emailSystemTextBox.Size = New System.Drawing.Size(276, 26)
+        Me.emailSystemTextBox.TabIndex = 4
+        '
+        'ButtonLogOff
+        '
+        Me.ButtonLogOff.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonLogOff.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.ButtonLogOff.Image = Global.Controle_de_Estoque.My.Resources.Resources.Icone_logoff
+        Me.ButtonLogOff.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.ButtonLogOff.Location = New System.Drawing.Point(793, 414)
+        Me.ButtonLogOff.Name = "ButtonLogOff"
+        Me.ButtonLogOff.Size = New System.Drawing.Size(200, 281)
+        Me.ButtonLogOff.TabIndex = 1000023
+        Me.ButtonLogOff.Text = "Log Off"
+        Me.ButtonLogOff.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ButtonLogOff.UseVisualStyleBackColor = True
+        '
+        'logoEmpresaPictureBox
+        '
+        Me.logoEmpresaPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
+        Me.logoEmpresaPictureBox.Location = New System.Drawing.Point(216, 488)
+        Me.logoEmpresaPictureBox.Name = "logoEmpresaPictureBox"
+        Me.logoEmpresaPictureBox.Size = New System.Drawing.Size(270, 200)
+        Me.logoEmpresaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.logoEmpresaPictureBox.TabIndex = 1000022
+        Me.logoEmpresaPictureBox.TabStop = False
+        '
+        'openCaixaButton
+        '
+        Me.openCaixaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.openCaixaButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.openCaixaButton.Image = Global.Controle_de_Estoque.My.Resources.Resources.caixa_abrir2
+        Me.openCaixaButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.openCaixaButton.Location = New System.Drawing.Point(571, 414)
+        Me.openCaixaButton.Name = "openCaixaButton"
+        Me.openCaixaButton.Size = New System.Drawing.Size(200, 281)
+        Me.openCaixaButton.TabIndex = 9
+        Me.openCaixaButton.Text = "Abrir Caixa"
+        Me.openCaixaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.openCaixaButton.UseVisualStyleBackColor = True
+        '
+        'produtoPictureBox
+        '
+        Me.produtoPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
+        Me.produtoPictureBox.Location = New System.Drawing.Point(6, 45)
+        Me.produtoPictureBox.Name = "produtoPictureBox"
+        Me.produtoPictureBox.Size = New System.Drawing.Size(130, 135)
+        Me.produtoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.produtoPictureBox.TabIndex = 50
+        Me.produtoPictureBox.TabStop = False
+        '
+        'fotoEmployeePictureBox
+        '
+        Me.fotoEmployeePictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_profile_photo
+        Me.fotoEmployeePictureBox.Location = New System.Drawing.Point(719, 31)
+        Me.fotoEmployeePictureBox.Name = "fotoEmployeePictureBox"
+        Me.fotoEmployeePictureBox.Size = New System.Drawing.Size(230, 230)
+        Me.fotoEmployeePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.fotoEmployeePictureBox.TabIndex = 35
+        Me.fotoEmployeePictureBox.TabStop = False
+        '
+        'categoriaPictureBox
+        '
+        Me.categoriaPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
+        Me.categoriaPictureBox.Location = New System.Drawing.Point(845, 224)
+        Me.categoriaPictureBox.Name = "categoriaPictureBox"
+        Me.categoriaPictureBox.Size = New System.Drawing.Size(150, 150)
+        Me.categoriaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.categoriaPictureBox.TabIndex = 20
+        Me.categoriaPictureBox.TabStop = False
+        '
         'imageFuncCadPictureBox
         '
         Me.imageFuncCadPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_profile_photo
@@ -1873,13 +1898,6 @@ Partial Class Form_Admin
         Me.imageFuncCadPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imageFuncCadPictureBox.TabIndex = 36
         Me.imageFuncCadPictureBox.TabStop = False
-        '
-        'selecionarImagemOpenFileDialog
-        '
-        Me.selecionarImagemOpenFileDialog.FileName = "OpenFileDialog1"
-        Me.selecionarImagemOpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *gif) | *.jpg; *.jpeg; *.jpe; *" &
-    ".jfif; *.png;  *gif"
-        Me.selecionarImagemOpenFileDialog.InitialDirectory = "C:\"
         '
         'Form_Admin
         '
@@ -1895,27 +1913,27 @@ Partial Class Form_Admin
         Me.Text = "Administrador"
         Me.TopMost = True
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        CType(Me.logoEmpresaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.produtosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.produtoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.employeeInfoDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fotoEmployeePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         CType(Me.reportAccessDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         CType(Me.produtosCategoriasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.categoriaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
         CType(Me.produtosEQuantidadesFiadoDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        CType(Me.logoEmpresaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.produtoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.fotoEmployeePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.categoriaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imageFuncCadPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -2077,4 +2095,5 @@ Partial Class Form_Admin
     Friend WithEvents Produtos As DataGridViewTextBoxColumn
     Friend WithEvents Label42 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents ButtonLogOff As Button
 End Class

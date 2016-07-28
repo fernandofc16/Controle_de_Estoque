@@ -684,7 +684,7 @@ Public Class Form_Admin
 
     Private Sub removeProdButton_Click(sender As Object, e As EventArgs) Handles removeProdButton.Click
 
-        Dim result As Integer = MessageBox.Show("Você irá deletar todo o cadastro do produto e seus respectivos lotes." & vbNewLine & "Deseja continuar?", "Remover Produto0", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Você irá deletar todo o cadastro do produto e seus respectivos lotes." & vbNewLine & "Deseja continuar?", "Remover Produto", MessageBoxButtons.YesNo)
 
         If result = DialogResult.Yes Then
             Dim Query As String = "DELETE FROM produtos_lotes WHERE produtos_fk = @id;"
@@ -2026,6 +2026,13 @@ Public Class Form_Admin
             Reader.Close()
             Connection.Close()
         End Try
+
+    End Sub
+
+    Private Sub ButtonLogOff_Click(sender As Object, e As EventArgs) Handles ButtonLogOff.Click
+
+        Login.Show()
+        Me.Dispose()
 
     End Sub
 

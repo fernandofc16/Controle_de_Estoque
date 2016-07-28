@@ -97,6 +97,7 @@ Partial Class Caixa
         Me.produtosListView.GridLines = True
         Me.produtosListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.produtosListView.Location = New System.Drawing.Point(567, 58)
+        Me.produtosListView.MultiSelect = False
         Me.produtosListView.Name = "produtosListView"
         Me.produtosListView.Size = New System.Drawing.Size(456, 642)
         Me.produtosListView.TabIndex = 4
