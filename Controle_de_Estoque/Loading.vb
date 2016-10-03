@@ -23,7 +23,7 @@ Public Class Loading
 
     Private Sub Loading_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
         ProgressBar1.Maximum = 150
         Timer1.Interval = 10
         Timer1.Start()

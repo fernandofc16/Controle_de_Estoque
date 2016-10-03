@@ -8,7 +8,7 @@ Public Class Login
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
 
         Dim Query As String = "SELECT userSalvo, passwordSalvo FROM login_salvos;"
         Command = New MySqlCommand(Query, Connection)
@@ -46,35 +46,31 @@ Public Class Login
 
     End Sub
 
-    Private Sub rememberCheckBox_CheckStateChanged(sender As Object, e As EventArgs) Handles rememberCheckBox.CheckStateChanged
+    Private Sub savedLogin(user As String, password As String)
+
+            Dim Query As String = "UPDATE login_salvos SET userSalvo = @user, passwordSalvo = @password WHERE id = 1;"
+            Command = New MySqlCommand(Query, Connection)
+            Command.Parameters.AddWithValue("@user", user)
+            Command.Parameters.AddWithValue("@password", password)
+
+            Try
+                Connection.Open()
+                Command.ExecuteNonQuery()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                Connection.Close()
+            End Try
+
+        End Sub
+
+    Private Sub LogIn()
 
         If rememberCheckBox.Checked Then
             savedLogin(userTextBox.Text, passwordTextBox.Text)
         Else
             savedLogin("", "")
         End If
-
-    End Sub
-
-    Private Sub savedLogin(user As String, password As String)
-
-        Dim Query As String = "UPDATE login_salvos SET userSalvo = @user, passwordSalvo = @password WHERE id = 1;"
-        Command = New MySqlCommand(Query, Connection)
-        Command.Parameters.AddWithValue("@user", user)
-        Command.Parameters.AddWithValue("@password", password)
-
-        Try
-            Connection.Open()
-            Command.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            Connection.Close()
-        End Try
-
-    End Sub
-
-    Private Sub LogIn()
 
         Dim Query As String = "SELECT password, isAdmin, id FROM login WHERE user = @user;"
         Dim passwordBD As String = ""
@@ -132,45 +128,45 @@ Public Class Login
     End Sub
 
     Private Sub okButton_Click(sender As Object, e As EventArgs) Handles okButton.Click
-        LogIn()
-    End Sub
-
-    Private Sub registerDateLogged()
-
-        Dim Query As String = "UPDATE login SET lastDateLogged = @date WHERE user = @user;"
-        Command = New MySqlCommand(Query, Connection)
-        Command.Parameters.AddWithValue("@date", Date.Now.ToString)
-        Command.Parameters.AddWithValue("@user", userTextBox.Text)
-
-        Try
-            Connection.Open()
-            Command.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            Connection.Close()
-        End Try
-
-    End Sub
-
-    Private Sub userTextBox_TextChanged(sender As Object, e As EventArgs) Handles userTextBox.TextChanged
-        rememberCheckBox.Checked = False
-    End Sub
-
-    Private Sub passwordTextBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles passwordTextBox.MaskInputRejected
-        rememberCheckBox.Checked = False
-    End Sub
-
-    Private Sub passwordTextBox_EnterPressed(sender As Object, e As KeyEventArgs) Handles passwordTextBox.KeyDown
-        If e.KeyCode = Keys.Enter Then
             LogIn()
-        End If
-    End Sub
+        End Sub
 
-    Private Sub userTextBox_EnterPressed(sender As Object, e As KeyEventArgs) Handles userTextBox.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            LogIn()
-        End If
-    End Sub
+        Private Sub registerDateLogged()
 
-End Class
+            Dim Query As String = "UPDATE login SET lastDateLogged = @date WHERE user = @user;"
+            Command = New MySqlCommand(Query, Connection)
+            Command.Parameters.AddWithValue("@date", Date.Now.ToString)
+            Command.Parameters.AddWithValue("@user", userTextBox.Text)
+
+            Try
+                Connection.Open()
+                Command.ExecuteNonQuery()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                Connection.Close()
+            End Try
+
+        End Sub
+
+        Private Sub userTextBox_TextChanged(sender As Object, e As EventArgs) Handles userTextBox.TextChanged
+            rememberCheckBox.Checked = False
+        End Sub
+
+        Private Sub passwordTextBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles passwordTextBox.MaskInputRejected
+            rememberCheckBox.Checked = False
+        End Sub
+
+        Private Sub passwordTextBox_EnterPressed(sender As Object, e As KeyEventArgs) Handles passwordTextBox.KeyDown
+            If e.KeyCode = Keys.Enter Then
+                LogIn()
+            End If
+        End Sub
+
+        Private Sub userTextBox_EnterPressed(sender As Object, e As KeyEventArgs) Handles userTextBox.KeyDown
+            If e.KeyCode = Keys.Enter Then
+                LogIn()
+            End If
+        End Sub
+
+    End Class

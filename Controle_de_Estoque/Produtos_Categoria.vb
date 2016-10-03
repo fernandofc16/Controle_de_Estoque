@@ -13,7 +13,7 @@ Public Class Produtos_Categoria
             produtosCategoriaFlowLayoutPanel.Controls.Clear()
         End While
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
 
         Dim itensInCategoria As Integer = 0
         Dim onlyName As String = ""

@@ -32,7 +32,7 @@ Public Class Caixa
 
     Private Sub Caixa_Employee_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
 
         IW = Me.Width
         IH = Me.Height

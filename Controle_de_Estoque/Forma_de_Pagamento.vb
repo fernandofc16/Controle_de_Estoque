@@ -10,7 +10,7 @@ Public Class Forma_de_Pagamento
 
     Private Sub Forma_de_Pagamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
         Me.Size = New Size(310, 160)
         requestComboBoxFormasDePagamento()
 

@@ -8,7 +8,7 @@ Public Class Fiado_Employee
 
     Private Sub Fiado_Employee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
         requestEmployeeFiadoComboBox()
 
     End Sub

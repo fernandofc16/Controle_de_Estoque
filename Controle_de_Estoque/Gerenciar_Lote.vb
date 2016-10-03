@@ -9,7 +9,7 @@ Public Class Gerenciar_Lote
 
     Private Sub Gerenciar_Lote_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
 
         Dim nomeProd As String = ""
         Dim Query As String = "SELECT nome, quantidade, validade, image FROM produtos WHERE id = @id;"

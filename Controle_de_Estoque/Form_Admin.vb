@@ -12,11 +12,12 @@ Public Class Form_Admin
     Private idEmployee As Integer
     Private employeeFiadoSelected As Integer = 0
     Private categoriaSelected As Integer = 0
+    Private currentValueMoney As String = ""
     Public userLogged As String
 
     Private Sub Form_Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=maoleio123"
+        Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
 
         requestFormasDePgamentosComboBox()
         requestProdutosComboBox()
@@ -234,7 +235,9 @@ Public Class Form_Admin
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles openCaixaButton.Click
-
+        If Connection.State = ConnectionState.Open Then
+            Connection.Close()
+        End If
         Me.Hide()
         Caixa.isAdmin = True
         Caixa.Show()
@@ -273,59 +276,63 @@ Public Class Form_Admin
 
     Private Sub deleteButton_Click(sender As Object, e As EventArgs) Handles deleteButton.Click
 
-        Dim Query As String = "DELETE FROM employee WHERE id = @id;"
-        Command = New MySqlCommand(Query, Connection)
-        Command.Parameters.AddWithValue("id", idEmployeeTextBox.Text)
+        Dim result As Integer = MessageBox.Show("Deseja excluir o cadastro do funcionário selecionado?", "Remover Funcionário", MessageBoxButtons.YesNo)
 
-        Try
-            Connection.Open()
-            Command.ExecuteNonQuery()
-
-        Catch exOnUpdate As MySqlException
-            MsgBox("Antes de deletar o funcionário elimine as compras pendentes do mesmo.")
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-            Exit Sub
-        Finally
-            Connection.Close()
-        End Try
-
-        Dim count As Integer = 0
-        Query = "SELECT COUNT(nomeUser) FROM login WHERE id_employee = @id;"
-        Command = New MySqlCommand(Query, Connection)
-        Command.Parameters.AddWithValue("id", idEmployeeTextBox.Text)
-
-        Try
-            Connection.Open()
-            Reader = Command.ExecuteReader()
-            While Reader.Read
-                count = Reader.GetValue(0)
-            End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            Connection.Close()
-        End Try
-
-        If count > 0 Then
-            Query = "DELETE FROM login WHERE id_employee = @id"
+        If result = DialogResult.Yes Then
+            Dim Query As String = "DELETE FROM employee WHERE id = @id;"
             Command = New MySqlCommand(Query, Connection)
             Command.Parameters.AddWithValue("id", idEmployeeTextBox.Text)
 
             Try
                 Connection.Open()
                 Command.ExecuteNonQuery()
+
+            Catch exOnUpdate As MySqlException
+                MsgBox("Antes de deletar o funcionário elimine as compras pendentes do mesmo.")
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+                Exit Sub
+            Finally
+                Connection.Close()
+            End Try
+
+            Dim count As Integer = 0
+            Query = "SELECT COUNT(nomeUser) FROM login WHERE id_employee = @id;"
+            Command = New MySqlCommand(Query, Connection)
+            Command.Parameters.AddWithValue("id", idEmployeeTextBox.Text)
+
+            Try
+                Connection.Open()
+                Reader = Command.ExecuteReader()
+                While Reader.Read
+                    count = Reader.GetValue(0)
+                End While
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
                 Connection.Close()
             End Try
-        End If
 
-        funcionariosCadastradosSistemaFiadoEComboBoxFunc()
-        limparCamposFuncionarioCad()
-        employeeInfoDataGridView.Rows.Clear()
-        buscarEmployeeInfos()
+            If count > 0 Then
+                Query = "DELETE FROM login WHERE id_employee = @id"
+                Command = New MySqlCommand(Query, Connection)
+                Command.Parameters.AddWithValue("id", idEmployeeTextBox.Text)
+
+                Try
+                    Connection.Open()
+                    Command.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                Finally
+                    Connection.Close()
+                End Try
+            End If
+
+            funcionariosCadastradosSistemaFiadoEComboBoxFunc()
+            limparCamposFuncionarioCad()
+            employeeInfoDataGridView.Rows.Clear()
+            buscarEmployeeInfos()
+        End If
 
     End Sub
 
@@ -482,6 +489,19 @@ Public Class Form_Admin
 
     Private Sub searchReportTextBox_TextChanged(sender As Object, e As EventArgs) Handles searchReportTextBox.TextChanged
 
+        If (searchReportTextBox.Text.Trim = "") Then
+            For Each row As DataGridViewRow In reportAccessDataGridView.Rows
+                row.Visible = True
+                row.Selected = False
+            Next
+        Else
+            searchReports()
+        End If
+
+    End Sub
+
+    Private Sub searchReports()
+
         Dim index As Integer
 
         Select Case (True)
@@ -495,8 +515,9 @@ Public Class Form_Admin
 
         For Each row As DataGridViewRow In reportAccessDataGridView.Rows
             If (row.Cells(index).Value.ToString = searchReportTextBox.Text) Then
-                row.Selected = True
-                searchReportTextBox.SelectAll()
+                row.Visible = True
+            Else
+                row.Visible = False
             End If
         Next
 
@@ -748,7 +769,6 @@ Public Class Form_Admin
     End Sub
 
     Private Sub produtosDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles produtosDataGridView.CellMouseClick
-
         If (e.RowIndex >= 0) Then
             idProdTextBox.Text = produtosDataGridView.Rows(e.RowIndex).Cells(0).Value.ToString
             nomeProdTextBox.Text = produtosDataGridView.Rows(e.RowIndex).Cells(1).Value.ToString
@@ -779,7 +799,6 @@ Public Class Form_Admin
             End Try
 
         End If
-
     End Sub
 
     Private Sub checkMinEstoque()
@@ -867,7 +886,15 @@ Public Class Form_Admin
 
     Private Sub searchProdTextBox_TextChanged(sender As Object, e As EventArgs) Handles searchProdTextBox.TextChanged
 
-        searchProd()
+        If (searchProdTextBox.Text.Trim = "") Then
+            For Each row As DataGridViewRow In produtosDataGridView.Rows
+                row.Visible = True
+                row.Selected = False
+                cleanProdText()
+            Next
+        Else
+            searchProd()
+        End If
 
     End Sub
 
@@ -894,8 +921,10 @@ Public Class Form_Admin
 
         For Each row As DataGridViewRow In produtosDataGridView.Rows
             If (row.Cells(index).Value.ToString = searchProdTextBox.Text) Then
-                row.Selected = True
+                row.Visible = True
                 searchProdTextBox.SelectAll()
+            Else
+                row.Visible = False
             End If
         Next
 
@@ -2033,6 +2062,56 @@ Public Class Form_Admin
 
         Login.Show()
         Me.Dispose()
+
+    End Sub
+
+    Private Sub preçoProdTextBox_TextChanged(sender As Object, e As EventArgs) Handles preçoProdTextBox.TextChanged
+
+        If (preçoProdTextBox.Text.Trim <> "") Then
+
+            preçoProdTextBox.SelectionStart = preçoProdTextBox.Text.Length
+            Dim cleanString As String = preçoProdTextBox.Text.ToString.Replace(",", "")
+            Dim cleanString2 As String = cleanString.Replace("R$", "")
+
+            Dim parsed As Double = Double.Parse(cleanString2.Trim)
+            Dim stringFormatted As String = FormatCurrency(parsed / 100)
+            preçoProdTextBox.Text = stringFormatted
+
+        End If
+
+    End Sub
+
+    Private Sub validadeProdTextBox_KeyPressed(sender As Object, e As KeyPressEventArgs) Handles validadeProdTextBox.KeyPress
+
+        If Asc(e.KeyChar) = Keys.Back Then
+
+            Dim charsValidade As Char() = validadeProdTextBox.Text.ToString.ToCharArray()
+            If charsValidade(validadeProdTextBox.Text.Length - 1) = "/" Then
+                validadeProdTextBox.Text = validadeProdTextBox.Text.Remove(validadeProdTextBox.Text.Length - 1, 1)
+            End If
+
+            validadeProdTextBox.SelectionStart = validadeProdTextBox.Text.Length
+
+        ElseIf Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57 Then
+
+            If validadeProdTextBox.Text.Length <= 10 Then
+
+                Select Case validadeProdTextBox.Text.Length
+                    Case 2
+                        validadeProdTextBox.Text += "/"
+                        validadeProdTextBox.SelectionStart = validadeProdTextBox.Text.Length
+                    Case 5
+                        validadeProdTextBox.Text += "/"
+                        validadeProdTextBox.SelectionStart = validadeProdTextBox.Text.Length
+                End Select
+
+            End If
+
+        Else
+
+            e.KeyChar = ""
+
+        End If
 
     End Sub
 
