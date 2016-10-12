@@ -215,11 +215,11 @@ Public Class Caixa
     End Sub
 
     Private Sub Caixa_Employee_Closed(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Closed
-
+        Form_Admin.canSearchProdGridView = False
         reportAccess("FECHADO")
         setUserDislogged()
         Form_Admin.Show()
-
+        Form_Admin.canSearchProdGridView = True
     End Sub
 
     Private Sub Caixa_Employee_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -230,8 +230,11 @@ Public Class Caixa
                 Forma_de_Pagamento.ShowDialog()
                 finalizarCompra()
             Case Keys.F12
+                reportAccess("FECHADO")
                 Loading.ShowDialog()
-                Dispose()
+                Me.Dispose()
+                setUserDislogged()
+                Form_Admin.Show()
             Case Keys.F11
                 reset()
             Case Keys.F2
@@ -416,8 +419,12 @@ Public Class Caixa
 
     Private Sub finalizarButton_Click(sender As Object, e As EventArgs) Handles finalizarButton.Click
 
-        Forma_de_Pagamento.ShowDialog()
-        finalizarCompra()
+        If (produtosListView.Items.Count <> 0) Then
+            Forma_de_Pagamento.ShowDialog()
+            finalizarCompra()
+        Else
+            MsgBox("Não existe produtos na lista para finalizar a compra", MsgBoxStyle.Critical)
+        End If
 
     End Sub
 
@@ -658,7 +665,11 @@ Public Class Caixa
     End Sub
 
     Private Sub cancelButton_Click(sender As Object, e As EventArgs) Handles CaixaCancelButton.Click
-        cancelItem()
+        If produtosListView.SelectedItems.Count <> 0 Then
+            cancelItem()
+        Else
+            MsgBox("Selecione um produto antes de cancelar", MsgBoxStyle.Information)
+        End If
     End Sub
 
     Private Function resizeImage(width As Integer, heigth As Integer, imageToResize As Image) As Image

@@ -33,9 +33,7 @@ Partial Class Form_Admin
         Me.ButtonLogOff = New System.Windows.Forms.Button()
         Me.logoEmpresaPictureBox = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.formasDePagamentoTextBox = New System.Windows.Forms.TextBox()
         Me.removerFormaDePagamentoButton = New System.Windows.Forms.Button()
         Me.adicionarFormaDePagamentoButton = New System.Windows.Forms.Button()
         Me.formasDePagamentoComboBox = New System.Windows.Forms.ComboBox()
@@ -140,6 +138,7 @@ Partial Class Form_Admin
         Me.Datas_Fechado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Horas_Fechado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.imageProdCatPictureBox = New System.Windows.Forms.PictureBox()
         Me.limparCategoriasButton = New System.Windows.Forms.Button()
         Me.atualizarCategoriaButton = New System.Windows.Forms.Button()
         Me.Label31 = New System.Windows.Forms.Label()
@@ -197,6 +196,7 @@ Partial Class Form_Admin
         Me.TabPage4.SuspendLayout()
         CType(Me.reportAccessDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
+        CType(Me.imageProdCatPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.produtosCategoriasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.categoriaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
@@ -224,9 +224,7 @@ Partial Class Form_Admin
         Me.TabPage1.Controls.Add(Me.ButtonLogOff)
         Me.TabPage1.Controls.Add(Me.logoEmpresaPictureBox)
         Me.TabPage1.Controls.Add(Me.Label6)
-        Me.TabPage1.Controls.Add(Me.Label35)
         Me.TabPage1.Controls.Add(Me.Label34)
-        Me.TabPage1.Controls.Add(Me.formasDePagamentoTextBox)
         Me.TabPage1.Controls.Add(Me.removerFormaDePagamentoButton)
         Me.TabPage1.Controls.Add(Me.adicionarFormaDePagamentoButton)
         Me.TabPage1.Controls.Add(Me.formasDePagamentoComboBox)
@@ -265,16 +263,16 @@ Partial Class Form_Admin
         Me.ButtonLogOff.Name = "ButtonLogOff"
         Me.ButtonLogOff.Size = New System.Drawing.Size(200, 281)
         Me.ButtonLogOff.TabIndex = 1000023
-        Me.ButtonLogOff.Text = "Log Off"
+        Me.ButtonLogOff.Text = "Sair"
         Me.ButtonLogOff.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ButtonLogOff.UseVisualStyleBackColor = True
         '
         'logoEmpresaPictureBox
         '
         Me.logoEmpresaPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
-        Me.logoEmpresaPictureBox.Location = New System.Drawing.Point(216, 488)
+        Me.logoEmpresaPictureBox.Location = New System.Drawing.Point(35, 395)
         Me.logoEmpresaPictureBox.Name = "logoEmpresaPictureBox"
-        Me.logoEmpresaPictureBox.Size = New System.Drawing.Size(270, 200)
+        Me.logoEmpresaPictureBox.Size = New System.Drawing.Size(470, 300)
         Me.logoEmpresaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.logoEmpresaPictureBox.TabIndex = 1000022
         Me.logoEmpresaPictureBox.TabStop = False
@@ -283,46 +281,28 @@ Partial Class Form_Admin
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(35, 308)
+        Me.Label6.Location = New System.Drawing.Point(511, 219)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(233, 24)
         Me.Label6.TabIndex = 180
         Me.Label6.Text = "Configuração do Relatório:"
         '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(511, 148)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(167, 20)
-        Me.Label35.TabIndex = 179
-        Me.Label35.Text = "Forma de Pagamento:"
-        '
         'Label34
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(511, 94)
+        Me.Label34.Location = New System.Drawing.Point(511, 74)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(274, 20)
         Me.Label34.TabIndex = 178
         Me.Label34.Text = "Formas de Pagamentos Adicionados:"
         '
-        'formasDePagamentoTextBox
-        '
-        Me.formasDePagamentoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.formasDePagamentoTextBox.Location = New System.Drawing.Point(515, 171)
-        Me.formasDePagamentoTextBox.Name = "formasDePagamentoTextBox"
-        Me.formasDePagamentoTextBox.Size = New System.Drawing.Size(276, 26)
-        Me.formasDePagamentoTextBox.TabIndex = 177
-        '
         'removerFormaDePagamentoButton
         '
         Me.removerFormaDePagamentoButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.removerFormaDePagamentoButton.Location = New System.Drawing.Point(699, 203)
+        Me.removerFormaDePagamentoButton.Location = New System.Drawing.Point(691, 147)
         Me.removerFormaDePagamentoButton.Name = "removerFormaDePagamentoButton"
-        Me.removerFormaDePagamentoButton.Size = New System.Drawing.Size(92, 30)
+        Me.removerFormaDePagamentoButton.Size = New System.Drawing.Size(100, 30)
         Me.removerFormaDePagamentoButton.TabIndex = 176
         Me.removerFormaDePagamentoButton.Text = "Remover"
         Me.removerFormaDePagamentoButton.UseVisualStyleBackColor = True
@@ -330,9 +310,9 @@ Partial Class Form_Admin
         'adicionarFormaDePagamentoButton
         '
         Me.adicionarFormaDePagamentoButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.adicionarFormaDePagamentoButton.Location = New System.Drawing.Point(515, 203)
+        Me.adicionarFormaDePagamentoButton.Location = New System.Drawing.Point(515, 147)
         Me.adicionarFormaDePagamentoButton.Name = "adicionarFormaDePagamentoButton"
-        Me.adicionarFormaDePagamentoButton.Size = New System.Drawing.Size(92, 30)
+        Me.adicionarFormaDePagamentoButton.Size = New System.Drawing.Size(100, 30)
         Me.adicionarFormaDePagamentoButton.TabIndex = 175
         Me.adicionarFormaDePagamentoButton.Text = "Adicionar"
         Me.adicionarFormaDePagamentoButton.UseVisualStyleBackColor = True
@@ -342,7 +322,7 @@ Partial Class Form_Admin
         Me.formasDePagamentoComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.formasDePagamentoComboBox.FormattingEnabled = True
         Me.formasDePagamentoComboBox.Items.AddRange(New Object() {"Dinheiro", "NULL"})
-        Me.formasDePagamentoComboBox.Location = New System.Drawing.Point(515, 117)
+        Me.formasDePagamentoComboBox.Location = New System.Drawing.Point(515, 97)
         Me.formasDePagamentoComboBox.Name = "formasDePagamentoComboBox"
         Me.formasDePagamentoComboBox.Size = New System.Drawing.Size(276, 28)
         Me.formasDePagamentoComboBox.TabIndex = 174
@@ -351,7 +331,7 @@ Partial Class Form_Admin
         '
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(511, 44)
+        Me.Label33.Location = New System.Drawing.Point(511, 24)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(260, 24)
         Me.Label33.TabIndex = 173
@@ -361,16 +341,16 @@ Partial Class Form_Admin
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(37, 416)
+        Me.Label5.Location = New System.Drawing.Point(513, 327)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(150, 20)
+        Me.Label5.Size = New System.Drawing.Size(158, 20)
         Me.Label5.TabIndex = 172
-        Me.Label5.Text = "Opção do Relatório:"
+        Me.Label5.Text = "Opções de Relatório:"
         '
         'resumoRelatorioRadioButton
         '
         Me.resumoRelatorioRadioButton.AutoSize = True
-        Me.resumoRelatorioRadioButton.Location = New System.Drawing.Point(204, 439)
+        Me.resumoRelatorioRadioButton.Location = New System.Drawing.Point(680, 350)
         Me.resumoRelatorioRadioButton.Name = "resumoRelatorioRadioButton"
         Me.resumoRelatorioRadioButton.Size = New System.Drawing.Size(72, 17)
         Me.resumoRelatorioRadioButton.TabIndex = 171
@@ -381,7 +361,7 @@ Partial Class Form_Admin
         '
         Me.completoRelatorioRadioButton.AutoSize = True
         Me.completoRelatorioRadioButton.Checked = True
-        Me.completoRelatorioRadioButton.Location = New System.Drawing.Point(204, 416)
+        Me.completoRelatorioRadioButton.Location = New System.Drawing.Point(680, 327)
         Me.completoRelatorioRadioButton.Name = "completoRelatorioRadioButton"
         Me.completoRelatorioRadioButton.Size = New System.Drawing.Size(74, 17)
         Me.completoRelatorioRadioButton.TabIndex = 170
@@ -393,17 +373,17 @@ Partial Class Form_Admin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 533)
+        Me.Label1.Location = New System.Drawing.Point(31, 368)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(165, 24)
+        Me.Label1.Size = New System.Drawing.Size(230, 24)
         Me.Label1.TabIndex = 137
-        Me.Label1.Text = "Logo da Empresa:"
+        Me.Label1.Text = "Logo do Estabelecimento:"
         '
         'Label44
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(35, 347)
+        Me.Label44.Location = New System.Drawing.Point(511, 258)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(52, 20)
         Me.Label44.TabIndex = 136
@@ -412,7 +392,7 @@ Partial Class Form_Admin
         'nomeAdminTextBox
         '
         Me.nomeAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nomeAdminTextBox.Location = New System.Drawing.Point(33, 119)
+        Me.nomeAdminTextBox.Location = New System.Drawing.Point(33, 99)
         Me.nomeAdminTextBox.Name = "nomeAdminTextBox"
         Me.nomeAdminTextBox.Size = New System.Drawing.Size(276, 26)
         Me.nomeAdminTextBox.TabIndex = 1
@@ -421,18 +401,18 @@ Partial Class Form_Admin
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(29, 96)
+        Me.Label10.Location = New System.Drawing.Point(29, 76)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(104, 20)
+        Me.Label10.Size = New System.Drawing.Size(179, 20)
         Me.Label10.TabIndex = 135
-        Me.Label10.Text = "Nome Admin:"
+        Me.Label10.Text = "Nome do Administrador:"
         '
         'SMTPHostComboBox
         '
         Me.SMTPHostComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SMTPHostComboBox.FormattingEnabled = True
         Me.SMTPHostComboBox.Items.AddRange(New Object() {"@globomail.com", "@gmail.com", "@outlook.com", "@hotmail.com", "@yahoo.com.br", "@bol.com.br"})
-        Me.SMTPHostComboBox.Location = New System.Drawing.Point(320, 370)
+        Me.SMTPHostComboBox.Location = New System.Drawing.Point(796, 281)
         Me.SMTPHostComboBox.Name = "SMTPHostComboBox"
         Me.SMTPHostComboBox.Size = New System.Drawing.Size(166, 28)
         Me.SMTPHostComboBox.TabIndex = 5
@@ -441,7 +421,7 @@ Partial Class Form_Admin
         'showPasswordAdminCheckBox
         '
         Me.showPasswordAdminCheckBox.AutoSize = True
-        Me.showPasswordAdminCheckBox.Location = New System.Drawing.Point(216, 256)
+        Me.showPasswordAdminCheckBox.Location = New System.Drawing.Point(216, 262)
         Me.showPasswordAdminCheckBox.Name = "showPasswordAdminCheckBox"
         Me.showPasswordAdminCheckBox.Size = New System.Drawing.Size(93, 17)
         Me.showPasswordAdminCheckBox.TabIndex = 131
@@ -452,7 +432,7 @@ Partial Class Form_Admin
         'userAdminTextBox
         '
         Me.userAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.userAdminTextBox.Location = New System.Drawing.Point(33, 171)
+        Me.userAdminTextBox.Location = New System.Drawing.Point(33, 163)
         Me.userAdminTextBox.Name = "userAdminTextBox"
         Me.userAdminTextBox.Size = New System.Drawing.Size(276, 26)
         Me.userAdminTextBox.TabIndex = 2
@@ -461,16 +441,16 @@ Partial Class Form_Admin
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(29, 148)
+        Me.Label4.Location = New System.Drawing.Point(29, 140)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(117, 20)
+        Me.Label4.Size = New System.Drawing.Size(192, 20)
         Me.Label4.TabIndex = 129
-        Me.Label4.Text = "Usuário Admin:"
+        Me.Label4.Text = "Usuário do Administrador:"
         '
         'senhaAdminTextBox
         '
         Me.senhaAdminTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.senhaAdminTextBox.Location = New System.Drawing.Point(33, 224)
+        Me.senhaAdminTextBox.Location = New System.Drawing.Point(33, 231)
         Me.senhaAdminTextBox.Name = "senhaAdminTextBox"
         Me.senhaAdminTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.senhaAdminTextBox.Size = New System.Drawing.Size(276, 26)
@@ -480,17 +460,17 @@ Partial Class Form_Admin
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(29, 200)
+        Me.Label3.Location = New System.Drawing.Point(29, 206)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 20)
+        Me.Label3.Size = New System.Drawing.Size(184, 20)
         Me.Label3.TabIndex = 127
-        Me.Label3.Text = "Senha Admin:"
+        Me.Label3.Text = "Senha do Administrador:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(31, 44)
+        Me.Label2.Location = New System.Drawing.Point(31, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(261, 24)
         Me.Label2.TabIndex = 124
@@ -499,7 +479,7 @@ Partial Class Form_Admin
         'emailSystemTextBox
         '
         Me.emailSystemTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.emailSystemTextBox.Location = New System.Drawing.Point(39, 370)
+        Me.emailSystemTextBox.Location = New System.Drawing.Point(515, 281)
         Me.emailSystemTextBox.Name = "emailSystemTextBox"
         Me.emailSystemTextBox.Size = New System.Drawing.Size(276, 26)
         Me.emailSystemTextBox.TabIndex = 4
@@ -1139,6 +1119,7 @@ Partial Class Form_Admin
         '
         'updateButton
         '
+        Me.updateButton.Cursor = System.Windows.Forms.Cursors.Default
         Me.updateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updateButton.Location = New System.Drawing.Point(170, 207)
         Me.updateButton.Name = "updateButton"
@@ -1267,9 +1248,9 @@ Partial Class Form_Admin
         Me.datasRadioButton.AutoSize = True
         Me.datasRadioButton.Location = New System.Drawing.Point(594, 651)
         Me.datasRadioButton.Name = "datasRadioButton"
-        Me.datasRadioButton.Size = New System.Drawing.Size(53, 17)
+        Me.datasRadioButton.Size = New System.Drawing.Size(87, 17)
         Me.datasRadioButton.TabIndex = 12
-        Me.datasRadioButton.Text = "Datas"
+        Me.datasRadioButton.Text = "Datas Aberto"
         Me.datasRadioButton.UseVisualStyleBackColor = True
         '
         'nomesRadioButton
@@ -1380,6 +1361,7 @@ Partial Class Form_Admin
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.imageProdCatPictureBox)
         Me.TabPage5.Controls.Add(Me.limparCategoriasButton)
         Me.TabPage5.Controls.Add(Me.atualizarCategoriaButton)
         Me.TabPage5.Controls.Add(Me.Label31)
@@ -1406,10 +1388,20 @@ Partial Class Form_Admin
         Me.TabPage5.Text = "Caixa Categorias"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'imageProdCatPictureBox
+        '
+        Me.imageProdCatPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
+        Me.imageProdCatPictureBox.Location = New System.Drawing.Point(822, 526)
+        Me.imageProdCatPictureBox.Name = "imageProdCatPictureBox"
+        Me.imageProdCatPictureBox.Size = New System.Drawing.Size(130, 130)
+        Me.imageProdCatPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imageProdCatPictureBox.TabIndex = 24
+        Me.imageProdCatPictureBox.TabStop = False
+        '
         'limparCategoriasButton
         '
         Me.limparCategoriasButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.limparCategoriasButton.Location = New System.Drawing.Point(678, 346)
+        Me.limparCategoriasButton.Location = New System.Drawing.Point(654, 325)
         Me.limparCategoriasButton.Name = "limparCategoriasButton"
         Me.limparCategoriasButton.Size = New System.Drawing.Size(135, 28)
         Me.limparCategoriasButton.TabIndex = 23
@@ -1420,7 +1412,7 @@ Partial Class Form_Admin
         'atualizarCategoriaButton
         '
         Me.atualizarCategoriaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.atualizarCategoriaButton.Location = New System.Drawing.Point(529, 346)
+        Me.atualizarCategoriaButton.Location = New System.Drawing.Point(505, 325)
         Me.atualizarCategoriaButton.Name = "atualizarCategoriaButton"
         Me.atualizarCategoriaButton.Size = New System.Drawing.Size(135, 28)
         Me.atualizarCategoriaButton.TabIndex = 22
@@ -1432,7 +1424,7 @@ Partial Class Form_Admin
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(592, 424)
+        Me.Label31.Location = New System.Drawing.Point(600, 429)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(275, 24)
         Me.Label31.TabIndex = 21
@@ -1442,7 +1434,7 @@ Partial Class Form_Admin
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(841, 183)
+        Me.Label30.Location = New System.Drawing.Point(808, 91)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(83, 24)
         Me.Label30.TabIndex = 18
@@ -1451,7 +1443,7 @@ Partial Class Form_Admin
         'utilizarNomeCategoriaCheckBox
         '
         Me.utilizarNomeCategoriaCheckBox.AutoSize = True
-        Me.utilizarNomeCategoriaCheckBox.Location = New System.Drawing.Point(732, 257)
+        Me.utilizarNomeCategoriaCheckBox.Location = New System.Drawing.Point(708, 236)
         Me.utilizarNomeCategoriaCheckBox.Name = "utilizarNomeCategoriaCheckBox"
         Me.utilizarNomeCategoriaCheckBox.Size = New System.Drawing.Size(88, 17)
         Me.utilizarNomeCategoriaCheckBox.TabIndex = 16
@@ -1463,7 +1455,7 @@ Partial Class Form_Admin
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(525, 198)
+        Me.Label29.Location = New System.Drawing.Point(501, 177)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(67, 24)
         Me.Label29.TabIndex = 15
@@ -1472,7 +1464,7 @@ Partial Class Form_Admin
         'removerCategoriasButton
         '
         Me.removerCategoriasButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.removerCategoriasButton.Location = New System.Drawing.Point(678, 312)
+        Me.removerCategoriasButton.Location = New System.Drawing.Point(654, 291)
         Me.removerCategoriasButton.Name = "removerCategoriasButton"
         Me.removerCategoriasButton.Size = New System.Drawing.Size(135, 28)
         Me.removerCategoriasButton.TabIndex = 14
@@ -1483,7 +1475,7 @@ Partial Class Form_Admin
         'removerProdutoCategoriaButton
         '
         Me.removerProdutoCategoriaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.removerProdutoCategoriaButton.Location = New System.Drawing.Point(780, 547)
+        Me.removerProdutoCategoriaButton.Location = New System.Drawing.Point(696, 586)
         Me.removerProdutoCategoriaButton.Name = "removerProdutoCategoriaButton"
         Me.removerProdutoCategoriaButton.Size = New System.Drawing.Size(100, 70)
         Me.removerProdutoCategoriaButton.TabIndex = 13
@@ -1494,7 +1486,7 @@ Partial Class Form_Admin
         'categoriaTypeTextBox
         '
         Me.categoriaTypeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.categoriaTypeTextBox.Location = New System.Drawing.Point(529, 225)
+        Me.categoriaTypeTextBox.Location = New System.Drawing.Point(505, 204)
         Me.categoriaTypeTextBox.Name = "categoriaTypeTextBox"
         Me.categoriaTypeTextBox.Size = New System.Drawing.Size(284, 26)
         Me.categoriaTypeTextBox.TabIndex = 3
@@ -1502,7 +1494,7 @@ Partial Class Form_Admin
         'adicionarCategoriaButton
         '
         Me.adicionarCategoriaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.adicionarCategoriaButton.Location = New System.Drawing.Point(529, 312)
+        Me.adicionarCategoriaButton.Location = New System.Drawing.Point(505, 291)
         Me.adicionarCategoriaButton.Name = "adicionarCategoriaButton"
         Me.adicionarCategoriaButton.Size = New System.Drawing.Size(135, 28)
         Me.adicionarCategoriaButton.TabIndex = 11
@@ -1533,7 +1525,7 @@ Partial Class Form_Admin
         Me.produtosCategoriasDataGridView.Name = "produtosCategoriasDataGridView"
         Me.produtosCategoriasDataGridView.ReadOnly = True
         Me.produtosCategoriasDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.produtosCategoriasDataGridView.Size = New System.Drawing.Size(512, 698)
+        Me.produtosCategoriasDataGridView.Size = New System.Drawing.Size(485, 698)
         Me.produtosCategoriasDataGridView.TabIndex = 8
         Me.produtosCategoriasDataGridView.TabStop = False
         '
@@ -1547,7 +1539,7 @@ Partial Class Form_Admin
         'adicionarProdutoCategoriaButton
         '
         Me.adicionarProdutoCategoriaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.adicionarProdutoCategoriaButton.Location = New System.Drawing.Point(596, 547)
+        Me.adicionarProdutoCategoriaButton.Location = New System.Drawing.Point(512, 586)
         Me.adicionarProdutoCategoriaButton.Name = "adicionarProdutoCategoriaButton"
         Me.adicionarProdutoCategoriaButton.Size = New System.Drawing.Size(100, 70)
         Me.adicionarProdutoCategoriaButton.TabIndex = 4
@@ -1560,7 +1552,7 @@ Partial Class Form_Admin
         Me.produtosButtonsCaixaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.produtosButtonsCaixaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.produtosButtonsCaixaComboBox.FormattingEnabled = True
-        Me.produtosButtonsCaixaComboBox.Location = New System.Drawing.Point(596, 492)
+        Me.produtosButtonsCaixaComboBox.Location = New System.Drawing.Point(512, 531)
         Me.produtosButtonsCaixaComboBox.Name = "produtosButtonsCaixaComboBox"
         Me.produtosButtonsCaixaComboBox.Size = New System.Drawing.Size(284, 28)
         Me.produtosButtonsCaixaComboBox.TabIndex = 2
@@ -1569,18 +1561,18 @@ Partial Class Form_Admin
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(592, 465)
+        Me.Label9.Location = New System.Drawing.Point(508, 504)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(81, 24)
+        Me.Label9.Size = New System.Drawing.Size(90, 24)
         Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Produto:"
+        Me.Label9.Text = "Produtos:"
         '
         'categoriaButtonsCaixaComboBox
         '
         Me.categoriaButtonsCaixaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.categoriaButtonsCaixaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.categoriaButtonsCaixaComboBox.FormattingEnabled = True
-        Me.categoriaButtonsCaixaComboBox.Location = New System.Drawing.Point(529, 127)
+        Me.categoriaButtonsCaixaComboBox.Location = New System.Drawing.Point(503, 117)
         Me.categoriaButtonsCaixaComboBox.Name = "categoriaButtonsCaixaComboBox"
         Me.categoriaButtonsCaixaComboBox.Size = New System.Drawing.Size(284, 28)
         Me.categoriaButtonsCaixaComboBox.TabIndex = 1
@@ -1589,7 +1581,7 @@ Partial Class Form_Admin
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(525, 100)
+        Me.Label8.Location = New System.Drawing.Point(499, 90)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(190, 24)
         Me.Label8.TabIndex = 0
@@ -1598,9 +1590,9 @@ Partial Class Form_Admin
         'categoriaPictureBox
         '
         Me.categoriaPictureBox.Image = Global.Controle_de_Estoque.My.Resources.Resources.default_produto_photo
-        Me.categoriaPictureBox.Location = New System.Drawing.Point(845, 224)
+        Me.categoriaPictureBox.Location = New System.Drawing.Point(812, 132)
         Me.categoriaPictureBox.Name = "categoriaPictureBox"
-        Me.categoriaPictureBox.Size = New System.Drawing.Size(150, 150)
+        Me.categoriaPictureBox.Size = New System.Drawing.Size(170, 170)
         Me.categoriaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.categoriaPictureBox.TabIndex = 20
         Me.categoriaPictureBox.TabStop = False
@@ -1903,15 +1895,16 @@ Partial Class Form_Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.ClientSize = New System.Drawing.Size(1008, 729)
         Me.Controls.Add(Me.TabControl1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Form_Admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrador"
-        Me.TopMost = True
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1929,6 +1922,7 @@ Partial Class Form_Admin
         CType(Me.reportAccessDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        CType(Me.imageProdCatPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.produtosCategoriasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.categoriaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
@@ -2044,12 +2038,10 @@ Partial Class Form_Admin
     Friend WithEvents Label31 As Label
     Friend WithEvents produtoPictureBox As PictureBox
     Friend WithEvents Label32 As Label
-    Friend WithEvents formasDePagamentoTextBox As TextBox
     Friend WithEvents removerFormaDePagamentoButton As Button
     Friend WithEvents adicionarFormaDePagamentoButton As Button
     Friend WithEvents formasDePagamentoComboBox As ComboBox
     Friend WithEvents Label33 As Label
-    Friend WithEvents Label35 As Label
     Friend WithEvents Label34 As Label
     Friend WithEvents TabPage6 As TabPage
     Friend WithEvents removerCompraFiadoButton As Button
@@ -2096,4 +2088,5 @@ Partial Class Form_Admin
     Friend WithEvents Label42 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents ButtonLogOff As Button
+    Friend WithEvents imageProdCatPictureBox As PictureBox
 End Class

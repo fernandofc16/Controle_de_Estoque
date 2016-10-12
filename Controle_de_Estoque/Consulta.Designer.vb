@@ -22,6 +22,9 @@ Partial Class Consulta
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.produtosDataGridView = New System.Windows.Forms.DataGridView()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Preço = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,12 +48,36 @@ Partial Class Consulta
         '
         Me.produtosDataGridView.AllowUserToAddRows = False
         Me.produtosDataGridView.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.produtosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.produtosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.produtosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.Preço, Me.Quantidade, Me.Código_de_Barra, Me.Data_Validade})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.produtosDataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.produtosDataGridView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.produtosDataGridView.Location = New System.Drawing.Point(2, 99)
         Me.produtosDataGridView.Name = "produtosDataGridView"
         Me.produtosDataGridView.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.produtosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.produtosDataGridView.Size = New System.Drawing.Size(1004, 628)
         Me.produtosDataGridView.TabIndex = 0
         Me.produtosDataGridView.TabStop = False
@@ -113,7 +140,7 @@ Partial Class Consulta
         '
         Me.nomeRadioButton.AutoSize = True
         Me.nomeRadioButton.Checked = True
-        Me.nomeRadioButton.Location = New System.Drawing.Point(429, 7)
+        Me.nomeRadioButton.Location = New System.Drawing.Point(429, 33)
         Me.nomeRadioButton.Name = "nomeRadioButton"
         Me.nomeRadioButton.Size = New System.Drawing.Size(53, 17)
         Me.nomeRadioButton.TabIndex = 3
@@ -124,7 +151,7 @@ Partial Class Consulta
         'codigoRadioButton
         '
         Me.codigoRadioButton.AutoSize = True
-        Me.codigoRadioButton.Location = New System.Drawing.Point(429, 76)
+        Me.codigoRadioButton.Location = New System.Drawing.Point(488, 56)
         Me.codigoRadioButton.Name = "codigoRadioButton"
         Me.codigoRadioButton.Size = New System.Drawing.Size(101, 17)
         Me.codigoRadioButton.TabIndex = 4
@@ -134,7 +161,7 @@ Partial Class Consulta
         'quantidadeRadioButton
         '
         Me.quantidadeRadioButton.AutoSize = True
-        Me.quantidadeRadioButton.Location = New System.Drawing.Point(429, 53)
+        Me.quantidadeRadioButton.Location = New System.Drawing.Point(488, 33)
         Me.quantidadeRadioButton.Name = "quantidadeRadioButton"
         Me.quantidadeRadioButton.Size = New System.Drawing.Size(80, 17)
         Me.quantidadeRadioButton.TabIndex = 5
@@ -144,7 +171,7 @@ Partial Class Consulta
         'PreçoRadioButton
         '
         Me.PreçoRadioButton.AutoSize = True
-        Me.PreçoRadioButton.Location = New System.Drawing.Point(429, 30)
+        Me.PreçoRadioButton.Location = New System.Drawing.Point(429, 56)
         Me.PreçoRadioButton.Name = "PreçoRadioButton"
         Me.PreçoRadioButton.Size = New System.Drawing.Size(53, 17)
         Me.PreçoRadioButton.TabIndex = 6

@@ -65,7 +65,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>controle_de_estoque.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\controle_de_estoque.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -283,7 +283,7 @@
     <None Include="Resources\default_logo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="controle_de_estoque.ico" />
+    <Content Include="Resources\controle_de_estoque.ico" />
     <None Include="Resources\admin_background.jpg" />
     <None Include="Resources\caixa_abrir.png" />
     <Content Include="Resources\caixa_abrir1.jpg" />

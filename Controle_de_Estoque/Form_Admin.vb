@@ -13,6 +13,8 @@ Public Class Form_Admin
     Private employeeFiadoSelected As Integer = 0
     Private categoriaSelected As Integer = 0
     Private currentValueMoney As String = ""
+    Public canSearchProdGridView As Boolean = True
+    Public canSearchFuncGridView As Boolean = True
     Public userLogged As String
 
     Private Sub Form_Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -235,16 +237,20 @@ Public Class Form_Admin
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles openCaixaButton.Click
-        If Connection.State = ConnectionState.Open Then
-            Connection.Close()
-        End If
+        canSearchProdGridView = False
         Me.Hide()
         Caixa.isAdmin = True
         Caixa.Show()
-
+        canSearchProdGridView = True
     End Sub
 
     Private Sub registerButton_Click(sender As Object, e As EventArgs) Handles registerButton.Click
+
+        canSearchFuncGridView = False
+        If nomeEmployeeTextBox.Text.Trim = "" Then
+            MsgBox("O Campo 'Nome' do cadastro não pode estar vazio", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
 
         Dim Query As String = "INSERT INTO employee VALUES(NULL, @nome, @rg, @cpf, @address, @telefone, @celular, @foto, NULL);"
         Command = New MySqlCommand(Query, Connection)
@@ -271,11 +277,13 @@ Public Class Form_Admin
         limparCamposFuncionarioCad()
         employeeInfoDataGridView.Rows.Clear()
         buscarEmployeeInfos()
+        canSearchFuncGridView = True
 
     End Sub
 
     Private Sub deleteButton_Click(sender As Object, e As EventArgs) Handles deleteButton.Click
 
+        canSearchFuncGridView = False
         Dim result As Integer = MessageBox.Show("Deseja excluir o cadastro do funcionário selecionado?", "Remover Funcionário", MessageBoxButtons.YesNo)
 
         If result = DialogResult.Yes Then
@@ -288,7 +296,7 @@ Public Class Form_Admin
                 Command.ExecuteNonQuery()
 
             Catch exOnUpdate As MySqlException
-                MsgBox("Antes de deletar o funcionário elimine as compras pendentes do mesmo.")
+                MsgBox("Antes de deletar o funcionário elimine as compras pendentes do mesmo.", MsgBoxStyle.Critical)
             Catch ex As Exception
                 MsgBox(ex.ToString)
                 Exit Sub
@@ -333,11 +341,17 @@ Public Class Form_Admin
             employeeInfoDataGridView.Rows.Clear()
             buscarEmployeeInfos()
         End If
+        canSearchFuncGridView = True
 
     End Sub
 
     Private Sub updateButton_Click(sender As Object, e As EventArgs) Handles updateButton.Click
 
+        canSearchFuncGridView = False
+        If nomeEmployeeTextBox.Text.Trim = "" Then
+            MsgBox("O Campo 'Nome' do cadastro não pode estar vazio", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
 
         Dim Query As String = "UPDATE employee SET Name = @nome, RG = @rg, CPF = @cpf, Address = @address, Telefone = @telefone, Celular = @celular, Foto = @foto WHERE id = @id;"
         Command = New MySqlCommand(Query, Connection)
@@ -364,6 +378,7 @@ Public Class Form_Admin
         limparCamposFuncionarioCad()
         employeeInfoDataGridView.Rows.Clear()
         buscarEmployeeInfos()
+        canSearchFuncGridView = True
 
     End Sub
 
@@ -409,38 +424,7 @@ Public Class Form_Admin
 
     End Sub
 
-    Private Sub employeeInfoDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles employeeInfoDataGridView.CellMouseClick
-
-        If (e.RowIndex >= 0) Then
-            idEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(0).Value
-            nomeEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(1).Value
-            rgEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(2).Value
-            cpfEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(3).Value
-            endereçoEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(4).Value
-            telefoneResidencialEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(5).Value
-            telefoneCelularEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(6).Value
-
-            Dim Query As String = "SELECT foto FROM employee WHERE id = @id;"
-            Command = New MySqlCommand(Query, Connection)
-            Command.Parameters.AddWithValue("@id", employeeInfoDataGridView.Rows(e.RowIndex).Cells(0).Value)
-
-            Try
-                Connection.Open()
-                Reader = Command.ExecuteReader()
-                While Reader.Read
-                    fotoEmployeePictureBox.Image = Byte2Image(Reader.GetValue(0))
-                End While
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            Finally
-                Reader.Close()
-                Connection.Close()
-            End Try
-        End If
-
-    End Sub
-
-    Private Function Byte2Image(ByVal byteArr() As Byte) As Image
+    Public Function Byte2Image(ByVal byteArr() As Byte) As Image
 
         Using ImageStream As New IO.MemoryStream(byteArr)
             Dim newImage As Image
@@ -460,30 +444,33 @@ Public Class Form_Admin
 
     Private Sub removerButton_Click(sender As Object, e As EventArgs) Handles removerButton.Click
 
-        For Each row As DataGridViewRow In reportAccessDataGridView.Rows
+        Dim result As Integer = MsgBox("Você deseja apagar todos os relatórios selecionados?", MsgBoxStyle.YesNo)
 
-            If (row.Selected = True) Then
-                Dim Query As String = "DELETE FROM report_access WHERE id = @id;"
-                Command = New MySqlCommand(Query, Connection)
-                Command.Parameters.AddWithValue("@id", row.Cells(0).Value)
+        If result = MsgBoxResult.Yes Then
+            For Each row As DataGridViewRow In reportAccessDataGridView.Rows
 
-                Try
-                    Connection.Open()
-                    Command.ExecuteNonQuery()
+                If (row.Selected = True) Then
+                    Dim Query As String = "DELETE FROM report_access WHERE id = @id;"
+                    Command = New MySqlCommand(Query, Connection)
+                    Command.Parameters.AddWithValue("@id", row.Cells(0).Value)
 
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                    Exit Sub
-                Finally
-                    Connection.Close()
-                End Try
+                    Try
+                        Connection.Open()
+                        Command.ExecuteNonQuery()
 
-            End If
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                        Exit Sub
+                    Finally
+                        Connection.Close()
+                    End Try
+                End If
 
-        Next
+            Next
 
-        reportAccessDataGridView.Rows.Clear()
-        requestReportUsers()
+            reportAccessDataGridView.Rows.Clear()
+            requestReportUsers()
+        End If
 
     End Sub
 
@@ -498,6 +485,12 @@ Public Class Form_Admin
             searchReports()
         End If
 
+    End Sub
+
+    Private Sub searchReportTextBox_KeyPressed(sender As Object, e As KeyPressEventArgs) Handles searchReportTextBox.KeyPress
+        If datasRadioButton.Checked Then
+            validateDate(searchReportTextBox, e)
+        End If
     End Sub
 
     Private Sub searchReports()
@@ -554,21 +547,21 @@ Public Class Form_Admin
     End Sub
 
     Private Sub registerProdButton_Click(sender As Object, e As EventArgs) Handles registerProdButton.Click
-
+        canSearchProdGridView = False
         If nomeProdTextBox.Text.Trim = "" Then
-            MsgBox("O campo 'nome' do produto não pode estar vazio")
+            MsgBox("O campo 'nome' do produto não pode estar vazio", MsgBoxStyle.Critical)
             Exit Sub
         End If
 
         If preçoProdTextBox.Text.Trim = "" Then
-            MsgBox("O campo 'preço' do produto não pode estar vazio")
+            MsgBox("O campo 'preço' do produto não pode estar vazio", MsgBoxStyle.Critical)
             Exit Sub
         End If
 
         Try
             Dim Dataaaa As Date = CDate(validadeProdTextBox.Text & " 00:00:00")
         Catch ex As Exception
-            MsgBox("Formato ou data inválido no campo de validade." & vbNewLine & "Por favor utilize o formato a seguir: dd/MM/yyyy")
+            MsgBox("Formato ou data inválido no campo de validade." & vbNewLine & "Por favor utilize o formato a seguir: dd/MM/yyyy", MsgBoxStyle.Critical)
             Exit Sub
         End Try
 
@@ -634,18 +627,18 @@ Public Class Form_Admin
         produtosDataGridView.Rows.Clear()
         requestProdutos()
         requestProdutosComboBox()
-
+        canSearchProdGridView = True
     End Sub
 
     Private Sub updateProdButton_Click(sender As Object, e As EventArgs) Handles updateProdButton.Click
-
+        canSearchProdGridView = False
         If nomeProdTextBox.Text.Trim = "" Then
-            MsgBox("O campo 'nome' do produto não pode estar vazio")
+            MsgBox("O campo 'nome' do produto não pode estar vazio", MsgBoxStyle.Critical)
             Exit Sub
         End If
 
         If preçoProdTextBox.Text.Trim = "" Then
-            MsgBox("O campo 'preço' do produto não pode estar vazio")
+            MsgBox("O campo 'preço' do produto não pode estar vazio", MsgBoxStyle.Critical)
             Exit Sub
         End If
 
@@ -700,11 +693,11 @@ Public Class Form_Admin
         produtosDataGridView.Rows.Clear()
         requestProdutos()
         requestProdutosComboBox()
-
+        canSearchProdGridView = True
     End Sub
 
     Private Sub removeProdButton_Click(sender As Object, e As EventArgs) Handles removeProdButton.Click
-
+        canSearchProdGridView = False
         Dim result As Integer = MessageBox.Show("Você irá deletar todo o cadastro do produto e seus respectivos lotes." & vbNewLine & "Deseja continuar?", "Remover Produto", MessageBoxButtons.YesNo)
 
         If result = DialogResult.Yes Then
@@ -744,7 +737,8 @@ Public Class Form_Admin
         Else
             Exit Sub
         End If
-
+        produtosCategoriasImage()
+        canSearchProdGridView = True
     End Sub
 
     Private Sub cleanAllProdButton_Click(sender As Object, e As EventArgs) Handles cleanAllProdButton.Click
@@ -768,8 +762,14 @@ Public Class Form_Admin
 
     End Sub
 
-    Private Sub produtosDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles produtosDataGridView.CellMouseClick
-        If (e.RowIndex >= 0) Then
+    Private Sub produtosDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles produtosDataGridView.RowEnter
+        produtosDataGridView_RequestProdutos(e)
+    End Sub
+
+    Private Sub produtosDataGridView_RequestProdutos(e As DataGridViewCellEventArgs)
+
+        If (e.RowIndex >= 0 And canSearchProdGridView) Then
+
             idProdTextBox.Text = produtosDataGridView.Rows(e.RowIndex).Cells(0).Value.ToString
             nomeProdTextBox.Text = produtosDataGridView.Rows(e.RowIndex).Cells(1).Value.ToString
             preçoProdTextBox.Text = produtosDataGridView.Rows(e.RowIndex).Cells(2).Value.ToString
@@ -791,6 +791,7 @@ Public Class Form_Admin
                 While Reader.Read
                     produtoPictureBox.Image = Byte2Image(Reader.GetValue(0))
                 End While
+
             Catch ex As Exception
                 MsgBox(ex.ToString)
             Finally
@@ -799,6 +800,7 @@ Public Class Form_Admin
             End Try
 
         End If
+
     End Sub
 
     Private Sub checkMinEstoque()
@@ -920,11 +922,18 @@ Public Class Form_Admin
         produtosDataGridView.ClearSelection()
 
         For Each row As DataGridViewRow In produtosDataGridView.Rows
-            If (row.Cells(index).Value.ToString = searchProdTextBox.Text) Then
-                row.Visible = True
-                searchProdTextBox.SelectAll()
-            Else
+            Dim searchLength As Integer = searchProdTextBox.Text.Length
+
+            If row.Cells(index).Value.ToString.Length < searchLength Then
                 row.Visible = False
+            Else
+                Dim cellValueString As String = row.Cells(index).Value.ToString.Substring(0, (searchLength))
+
+                If (cellValueString.ToLower.Equals(searchProdTextBox.Text.ToLower)) Then
+                    row.Visible = True
+                Else
+                    row.Visible = False
+                End If
             End If
         Next
 
@@ -975,7 +984,7 @@ Public Class Form_Admin
         End Try
 
         If categoriasNumber = 12 Then
-            MsgBox("Não é possível adicionar mais que 12 categorias")
+            MsgBox("Não é possível adicionar mais que 12 categorias", MsgBoxStyle.Critical)
             categoriaTypeTextBox.Text = ""
         Else
             Query = "INSERT INTO categorias_combo_box VALUES(NULL, @categoriaName, @useName, @image);"
@@ -1023,7 +1032,7 @@ Public Class Form_Admin
         End Try
 
         If produtosNaCategoria > 0 Then
-            MsgBox("Antes de atualizar a categoria: " & categoriaButtonsCaixaComboBox.SelectedItem & ", retire todos os produtos a ela acoplados.")
+            MsgBox("Antes de atualizar a categoria: " & categoriaButtonsCaixaComboBox.SelectedItem & ", retire todos os produtos a ela acoplados.", MsgBoxStyle.Critical)
             Exit Sub
         End If
 
@@ -1094,7 +1103,7 @@ Public Class Form_Admin
         End Try
 
         If produtosNaCategoria > 0 Then
-            MsgBox("Antes de remover a categoria: " & categoriaButtonsCaixaComboBox.SelectedItem & ", retire todos os produtos a ela acoplados.")
+            MsgBox("Antes de remover a categoria: " & categoriaButtonsCaixaComboBox.SelectedItem & ", retire todos os produtos a ela acoplados.", MsgBoxStyle.Critical)
             Exit Sub
         End If
 
@@ -1340,6 +1349,7 @@ Public Class Form_Admin
 
         If produtosButtonsCaixaComboBox.Items.Count = 0 Then
             adicionarProdutoCategoriaButton.Enabled = False
+            imageProdCatPictureBox.Image = My.Resources.ResourceManager.GetObject("default_produto_photo")
         End If
 
     End Sub
@@ -1429,7 +1439,7 @@ Public Class Form_Admin
 
     End Sub
 
-    Private Function resizeImage(imageToResize As Image) As Image
+    Public Function resizeImage(imageToResize As Image) As Image
 
         Dim bm_source As New Bitmap(imageToResize)
         Dim bm_dest As New Bitmap(500, 500)
@@ -1444,7 +1454,7 @@ Public Class Form_Admin
 
         Dim Query As String = "INSERT INTO formas_de_pagamento VALUES(NULL, @forma_de_pagamento);"
         Command = New MySqlCommand(Query, Connection)
-        Command.Parameters.AddWithValue("@forma_de_pagamento", formasDePagamentoTextBox.Text)
+        Command.Parameters.AddWithValue("@forma_de_pagamento", InputBox("Forma de Pagamento a ser adicionada:", "Adicionar Forma de Pagamento"))
 
         Try
             Connection.Open()
@@ -1456,14 +1466,13 @@ Public Class Form_Admin
         End Try
 
         requestFormasDePgamentosComboBox()
-        formasDePagamentoTextBox.Text = ""
 
     End Sub
 
     Private Sub removerFormaDePagamentoButton_Click(sender As Object, e As EventArgs) Handles removerFormaDePagamentoButton.Click
 
         If formasDePagamentoComboBox.SelectedItem = "Dinheiro" Or formasDePagamentoComboBox.SelectedItem = "Fiado" Then
-            MsgBox("Não é possível excluir a forma de pagamento selecionada: " & formasDePagamentoComboBox.SelectedItem)
+            MsgBox("Não é possível excluir a forma de pagamento selecionada: " & formasDePagamentoComboBox.SelectedItem, MsgBoxStyle.Critical)
             Exit Sub
         End If
 
@@ -1471,7 +1480,7 @@ Public Class Form_Admin
 
             Dim Query As String = "DELETE FROM formas_de_pagamento WHERE forma_de_pagamento = @forma_de_pagamento;"
             Command = New MySqlCommand(Query, Connection)
-            Command.Parameters.AddWithValue("@forma_de_pagamento", formasDePagamentoTextBox.Text)
+            Command.Parameters.AddWithValue("@forma_de_pagamento", formasDePagamentoComboBox.SelectedItem.ToString)
 
             Try
                 Connection.Open()
@@ -1485,14 +1494,7 @@ Public Class Form_Admin
         End If
 
         requestFormasDePgamentosComboBox()
-        formasDePagamentoTextBox.Text = ""
 
-    End Sub
-
-    Private Sub formasDePagamentoComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles formasDePagamentoComboBox.SelectedIndexChanged
-        If formasDePagamentoComboBox.SelectedItem <> "NULL" Then
-            formasDePagamentoTextBox.Text = formasDePagamentoComboBox.SelectedItem
-        End If
     End Sub
 
     Private Sub requestFormasDePgamentosComboBox()
@@ -1824,7 +1826,7 @@ Public Class Form_Admin
     Private Sub assinaturaDigitalCadastroButton_Click(sender As Object, e As EventArgs) Handles assinaturaDigitalCadastroButton.Click
 
         If assinaturaDigitalEmployeeTextBox.Text.Trim.Count <> 6 Then
-            MsgBox("A Assinatura Digital deve ter 6 caracteres")
+            MsgBox("A Assinatura Digital deve ter 6 caracteres", MsgBoxStyle.Critical)
             Exit Sub
         End If
 
@@ -1850,7 +1852,7 @@ Public Class Form_Admin
     Private Sub assinaturaDigitalRemoverButton_Click(sender As Object, e As EventArgs) Handles assinaturaDigitalRemoverButton.Click
 
         If datasComprasFiadoComboBox.SelectedItem.Trim <> "Nenhuma Compra Registrada" Then
-            MsgBox("Elimine as compras pendentes antes de remover o cadastro do funcionário " & funcionariosCadComboBox.SelectedItem)
+            MsgBox("Elimine as compras pendentes antes de remover o cadastro do funcionário " & funcionariosCadComboBox.SelectedItem, MsgBoxStyle.Critical)
             Exit Sub
         End If
 
@@ -2082,35 +2084,106 @@ Public Class Form_Admin
     End Sub
 
     Private Sub validadeProdTextBox_KeyPressed(sender As Object, e As KeyPressEventArgs) Handles validadeProdTextBox.KeyPress
+        validateDate(validadeProdTextBox, e)
+    End Sub
+
+    Private Sub validateDate(ByVal textBox As TextBox, ByVal e As KeyPressEventArgs)
 
         If Asc(e.KeyChar) = Keys.Back Then
 
-            Dim charsValidade As Char() = validadeProdTextBox.Text.ToString.ToCharArray()
-            If charsValidade(validadeProdTextBox.Text.Length - 1) = "/" Then
-                validadeProdTextBox.Text = validadeProdTextBox.Text.Remove(validadeProdTextBox.Text.Length - 1, 1)
-            End If
+            If textBox.Text.Length <> 0 Then
+                Dim charsValidade As Char() = textBox.Text.ToString.ToCharArray()
 
-            validadeProdTextBox.SelectionStart = validadeProdTextBox.Text.Length
+                If charsValidade(textBox.Text.Length - 1) = "/" Then
+                    textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1)
+                End If
+
+                textBox.SelectionStart = textBox.Text.Length
+
+            End If
 
         ElseIf Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57 Then
 
-            If validadeProdTextBox.Text.Length <= 10 Then
+            If textBox.Text.Length < 10 Then
 
-                Select Case validadeProdTextBox.Text.Length
+                Select Case textBox.Text.Length
                     Case 2
-                        validadeProdTextBox.Text += "/"
-                        validadeProdTextBox.SelectionStart = validadeProdTextBox.Text.Length
+                        textBox.Text += "/"
+                        textBox.SelectionStart = textBox.Text.Length
                     Case 5
-                        validadeProdTextBox.Text += "/"
-                        validadeProdTextBox.SelectionStart = validadeProdTextBox.Text.Length
+                        textBox.Text += "/"
+                        textBox.SelectionStart = textBox.Text.Length
                 End Select
 
+            Else
+                e.KeyChar = ""
             End If
 
         Else
-
             e.KeyChar = ""
+        End If
 
+    End Sub
+
+    Private Sub produtosButtonsCaixaComboBox_SelectedValueChanged(sender As Object, e As EventArgs) Handles produtosButtonsCaixaComboBox.SelectedValueChanged
+        produtosCategoriasImage()
+    End Sub
+
+    Private Sub produtosCategoriasImage()
+
+        If produtosButtonsCaixaComboBox.Items.Count = 0 Then
+            imageProdCatPictureBox.Image = My.Resources.ResourceManager.GetObject("default_produto_photo")
+            Exit Sub
+        End If
+
+        Dim Query As String = "SELECT image FROM produtos WHERE nome = @produtoName;"
+        Command = New MySqlCommand(Query, Connection)
+        Command.Parameters.AddWithValue("@produtoName", produtosButtonsCaixaComboBox.Text)
+
+        Try
+            Connection.Open()
+            Reader = Command.ExecuteReader()
+
+            While Reader.Read
+                imageProdCatPictureBox.Image = Byte2Image(Reader.GetValue(0))
+            End While
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            Reader.Close()
+            Connection.Close()
+        End Try
+
+    End Sub
+
+    Private Sub employeeInfoDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles employeeInfoDataGridView.RowEnter
+
+        If (e.RowIndex >= 0 And canSearchFuncGridView) Then
+            idEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(0).Value
+            nomeEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(1).Value
+            rgEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(2).Value
+            cpfEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(3).Value
+            endereçoEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(4).Value
+            telefoneResidencialEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(5).Value
+            telefoneCelularEmployeeTextBox.Text = employeeInfoDataGridView.Rows(e.RowIndex).Cells(6).Value
+
+            Dim Query As String = "SELECT foto FROM employee WHERE id = @id;"
+            Command = New MySqlCommand(Query, Connection)
+            Command.Parameters.AddWithValue("@id", employeeInfoDataGridView.Rows(e.RowIndex).Cells(0).Value)
+
+            Try
+                Connection.Open()
+                Reader = Command.ExecuteReader()
+                While Reader.Read
+                    fotoEmployeePictureBox.Image = Byte2Image(Reader.GetValue(0))
+                End While
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            Finally
+                Reader.Close()
+                Connection.Close()
+            End Try
         End If
 
     End Sub

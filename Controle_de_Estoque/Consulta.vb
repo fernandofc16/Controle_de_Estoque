@@ -56,14 +56,28 @@ Public Class Consulta
                 index = 3
         End Select
 
-        produtosDataGridView.ClearSelection()
+        If (consultaTextBox.Text.Trim = "") Then
+            For Each row As DataGridViewRow In produtosDataGridView.Rows
+                row.Visible = True
+                row.Selected = False
+            Next
+        Else
+            For Each row As DataGridViewRow In produtosDataGridView.Rows
+                Dim searchLength As Integer = consultaTextBox.Text.Length
 
-        For Each row As DataGridViewRow In produtosDataGridView.Rows
-            If (row.Cells(index).Value.ToString = consultaTextBox.Text) Then
-                row.Selected = True
-                consultaTextBox.SelectAll()
-            End If
-        Next
+                If row.Cells(index).Value.ToString.Length < searchLength Then
+                    row.Visible = False
+                Else
+                    Dim cellValueString As String = row.Cells(index).Value.ToString.Substring(0, (searchLength))
+
+                    If (cellValueString.ToLower.Equals(consultaTextBox.Text.ToLower)) Then
+                        row.Visible = True
+                    Else
+                        row.Visible = False
+                    End If
+                End If
+            Next
+        End If
 
     End Sub
 

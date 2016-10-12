@@ -170,9 +170,12 @@ Public Class Loading
         Next
 
         pdfDoc.Open()
-        pdfDoc.Add(New Paragraph("Relatório Resumido do Restaurante - Dia " & Date.Now.ToString("dd/MM/yyyy")))
+        pdfDoc.Add(New Paragraph("Relatório Resumido do Estabelecimento - Dia " & Date.Now.ToString("dd/MM/yyyy")))
 
         pdfDoc.Add(New Paragraph(" "))
+
+        anexarLogo()
+
         pdfDoc.Add(New Paragraph(" "))
 
         Dim list As New List(List.UNORDERED)
@@ -375,11 +378,6 @@ Public Class Loading
 
     Private Sub buscarRelatorioCompletoSQL()
 
-        Dim Query As String = "SELECT vendas.id_faturamentos, vendas.produtos, vendas.quantidades, faturamentos.valores, faturamentos.datas, faturamentos.horas, faturamentos.forma_pagamento, faturamentos.employee_sold
-                               FROM faturamentos
-                               JOIN vendas ON id_faturamentos = faturamentos.id
-                               WHERE faturamentos.fiado_reported != 1;"
-        Command = New MySqlCommand(Query, Connection)
         Dim idPorVenda, quantidade As Integer
         Dim produtos, valores, formaDePagamento As String
         Dim valorTotal As Double = 0
@@ -387,12 +385,21 @@ Public Class Loading
         Dim hora As String = ""
         Dim employeeSold = ""
 
+        pdfDoc.Open()
+        pdfDoc.Add(New Paragraph("Relatório Detalhado do Estabelecimento - Dia " & Date.Now.ToString("dd/MM/yyyy")))
+        pdfDoc.Add(New Paragraph(""))
+
+        anexarLogo()
+
+        Dim Query As String = "SELECT vendas.id_faturamentos, vendas.produtos, vendas.quantidades, faturamentos.valores, faturamentos.datas, faturamentos.horas, faturamentos.forma_pagamento, faturamentos.employee_sold
+                               FROM faturamentos
+                               JOIN vendas ON id_faturamentos = faturamentos.id
+                               WHERE faturamentos.fiado_reported != 1;"
+        Command = New MySqlCommand(Query, Connection)
+
         Try
             Connection.Open()
             Reader = Command.ExecuteReader()
-            pdfDoc.Open()
-
-            pdfDoc.Add(New Paragraph("Relatório Detalhado do Restaurante - Dia " & Date.Now.ToString("dd/MM/yyyy")))
 
             While Reader.Read()
 
@@ -436,7 +443,7 @@ Public Class Loading
             pdfDoc.Add(New Paragraph("Faturamento Total: R$" & valorTotal))
 
         Catch ex As Exception
-            erroText = ex.Message
+            erroText = ex.ToString
             erroOcurr = True
             Exit Sub
         Finally
@@ -638,5 +645,42 @@ Public Class Loading
         End If
 
     End Sub
+
+    Private Sub anexarLogo()
+
+        Dim Query As String = "SELECT image_logo FROM logo_empresa WHERE id = 1;"
+        Command = New MySqlCommand(Query, Connection)
+
+        Try
+            Connection.Open()
+            Reader = Command.ExecuteReader()
+
+            While Reader.Read
+                Dim logo As Drawing.Image = resizeImageLogo(Form_Admin.Byte2Image(Reader.GetValue(0)))
+
+                Dim converter As New ImageConverter
+                Dim arrayImage As Byte() = converter.ConvertTo(logo, GetType(Byte()))
+
+                pdfDoc.Add(Image.GetInstance(arrayImage))
+            End While
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            Reader.Close()
+            Connection.Close()
+        End Try
+
+    End Sub
+    Public Function resizeImageLogo(imageToResize As Drawing.Image) As Drawing.Image
+
+        Dim bm_source As New Bitmap(imageToResize)
+        Dim bm_dest As New Bitmap(150, 100)
+        Dim gr_dest As Graphics = Graphics.FromImage(bm_dest)
+        gr_dest.DrawImage(bm_source, 0, 0, bm_dest.Width + 1, bm_dest.Height + 1)
+
+        Return bm_dest
+
+    End Function
 
 End Class
