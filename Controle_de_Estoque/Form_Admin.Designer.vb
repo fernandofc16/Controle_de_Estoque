@@ -184,6 +184,7 @@ Partial Class Form_Admin
         Me.funcionariosCadComboBox = New System.Windows.Forms.ComboBox()
         Me.imageFuncCadPictureBox = New System.Windows.Forms.PictureBox()
         Me.selecionarImagemOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.notSendReportRadioButton = New System.Windows.Forms.RadioButton()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.logoEmpresaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,6 +222,7 @@ Partial Class Form_Admin
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.notSendReportRadioButton)
         Me.TabPage1.Controls.Add(Me.ButtonLogOff)
         Me.TabPage1.Controls.Add(Me.logoEmpresaPictureBox)
         Me.TabPage1.Controls.Add(Me.Label6)
@@ -1891,6 +1893,16 @@ Partial Class Form_Admin
     ".jfif; *.png;  *gif"
         Me.selecionarImagemOpenFileDialog.InitialDirectory = "C:\"
         '
+        'notSendReportRadioButton
+        '
+        Me.notSendReportRadioButton.AutoSize = True
+        Me.notSendReportRadioButton.Location = New System.Drawing.Point(680, 373)
+        Me.notSendReportRadioButton.Name = "notSendReportRadioButton"
+        Me.notSendReportRadioButton.Size = New System.Drawing.Size(77, 17)
+        Me.notSendReportRadioButton.TabIndex = 1000024
+        Me.notSendReportRadioButton.Text = "Não enviar"
+        Me.notSendReportRadioButton.UseVisualStyleBackColor = True
+        '
         'Form_Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2089,4 +2101,5 @@ Partial Class Form_Admin
     Friend WithEvents Label9 As Label
     Friend WithEvents ButtonLogOff As Button
     Friend WithEvents imageProdCatPictureBox As PictureBox
+    Friend WithEvents notSendReportRadioButton As RadioButton
 End Class

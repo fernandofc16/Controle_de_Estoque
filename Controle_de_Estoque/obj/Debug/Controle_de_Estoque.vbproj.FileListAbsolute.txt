@@ -46,6 +46,6 @@ C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Control
 C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.Resources.resources
 C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.Produtos_Categoria.resources
 C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.vbproj.GenerateResource.Cache
-C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.vbprojResolveAssemblyReference.cache
 C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Controle_de_Estoque\bin\Debug\MySql.Data.dll
 C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Controle_de_Estoque\bin\Debug\MySql.Data.xml
+C:\Users\ferna\Documents\Visual Studio 2015\Projects\Controle_de_Estoque\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.vbprojResolveAssemblyReference.cache
