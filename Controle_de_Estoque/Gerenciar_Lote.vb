@@ -436,4 +436,46 @@ Public Class Gerenciar_Lote
 
     End Sub
 
+    Private Sub gerenciarLoteValidadeProdTextBox_KeyPressed(sender As Object, e As KeyPressEventArgs) Handles gerenciarLoteValidadeProdTextBox.KeyPress
+        validateDate(gerenciarLoteValidadeProdTextBox, e)
+    End Sub
+
+    Private Sub validateDate(ByVal textBox As TextBox, ByVal e As KeyPressEventArgs)
+
+        If Asc(e.KeyChar) = Keys.Back Then
+
+            If textBox.Text.Length <> 0 Then
+                Dim charsValidade As Char() = textBox.Text.ToString.ToCharArray()
+
+                If charsValidade(textBox.Text.Length - 1) = "/" Then
+                    textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1)
+                End If
+
+                textBox.SelectionStart = textBox.Text.Length
+
+            End If
+
+        ElseIf Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57 Then
+
+            If textBox.Text.Length < 10 Then
+
+                Select Case textBox.Text.Length
+                    Case 2
+                        textBox.Text += "/"
+                        textBox.SelectionStart = textBox.Text.Length
+                    Case 5
+                        textBox.Text += "/"
+                        textBox.SelectionStart = textBox.Text.Length
+                End Select
+
+            Else
+                e.KeyChar = ""
+            End If
+
+        Else
+            e.KeyChar = ""
+        End If
+
+    End Sub
+
 End Class

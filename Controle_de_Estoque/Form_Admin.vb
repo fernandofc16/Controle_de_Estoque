@@ -50,6 +50,44 @@ Public Class Form_Admin
             Column.SortMode = DataGridViewColumnSortMode.NotSortable
         Next
 
+        'MsgBox(My.Computer.Screen.WorkingArea.Width & "  " & My.Computer.Screen.WorkingArea.Height)
+
+
+        'If My.Computer.Screen.WorkingArea.Width < 1920 Then
+        '    'MsgBox("Entrou width")
+        '    Dim scaleRatioX As Double = My.Computer.Screen.WorkingArea.Width / 1920
+        '    Me.Width *= scaleRatioX
+        '    For Each TabPage As TabPage In TabControlFormAdmin.TabPages
+        '        For Each Control As Control In TabPage.Controls
+        '            Control.Width *= scaleRatioX
+        '            Control.Left *= scaleRatioX
+        '            Control.Font = New Font("Microsoft Sans Serif", Control.Font.Size * scaleRatioX, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+        '        Next
+        '    Next
+        'End If
+
+        ''MsgBox(message)
+
+        'If My.Computer.Screen.WorkingArea.Height < 1030 Then
+        '    'MsgBox("Entrou height")
+        '    Dim scaleRatioY As Double = My.Computer.Screen.WorkingArea.Height / 1030
+        '    MsgBox(scaleRatioY)
+        '    Me.Height *= scaleRatioY
+        '    For Each TabPage As TabPage In TabControlFormAdmin.TabPages
+        '        For Each Control As Control In TabPage.Controls
+        '            Control.Width *= scaleRatioY
+        '            Control.Left *= scaleRatioY
+        '        Next
+        '    Next
+        'End If
+
+
+    End Sub
+
+    Private Sub Form_Admin_Resize(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Resize
+
+
+
     End Sub
 
     Private Sub Form_Admin_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
@@ -305,7 +343,7 @@ Public Class Form_Admin
             End Try
 
             Dim count As Integer = 0
-            Query = "SELECT COUNT(nomeUser) FROM login WHERE id_employee = @id;"
+            Query = "SELECT COUNT(nomeUser) FROM login WHERE id = @id;"
             Command = New MySqlCommand(Query, Connection)
             Command.Parameters.AddWithValue("id", idEmployeeTextBox.Text)
 
@@ -322,7 +360,7 @@ Public Class Form_Admin
             End Try
 
             If count > 0 Then
-                Query = "DELETE FROM login WHERE id_employee = @id"
+                Query = "DELETE FROM login WHERE id = @id"
                 Command = New MySqlCommand(Query, Connection)
                 Command.Parameters.AddWithValue("id", idEmployeeTextBox.Text)
 
@@ -1375,7 +1413,7 @@ Public Class Form_Admin
 
     End Sub
 
-    Private Sub produtosCategoriasDataGridView_CellContentClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles produtosCategoriasDataGridView.CellMouseClick
+    Private Sub ProdutosCategoriasDataGridView_CellContentClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles produtosCategoriasDataGridView.CellMouseClick
         If (e.RowIndex >= 0) Then
             produtoFromCategoriaSelected = produtosCategoriasDataGridView.Rows(e.RowIndex).Cells(0).Value
         End If
@@ -2033,8 +2071,10 @@ Public Class Form_Admin
         If idProdTextBox.Text.Trim = "" Then
             Exit Sub
         Else
+            canSearchProdGridView = False
             Gerenciar_Lote.id_produto = idProdTextBox.Text.Trim
             Gerenciar_Lote.ShowDialog()
+            canSearchProdGridView = True
         End If
     End Sub
 

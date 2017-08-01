@@ -67,7 +67,8 @@ Partial Class Consulta
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.produtosDataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.produtosDataGridView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.produtosDataGridView.Location = New System.Drawing.Point(2, 99)
+        Me.produtosDataGridView.Location = New System.Drawing.Point(3, 122)
+        Me.produtosDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.produtosDataGridView.Name = "produtosDataGridView"
         Me.produtosDataGridView.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -78,71 +79,77 @@ Partial Class Consulta
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.produtosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.produtosDataGridView.Size = New System.Drawing.Size(1004, 628)
+        Me.produtosDataGridView.Size = New System.Drawing.Size(1339, 773)
         Me.produtosDataGridView.TabIndex = 0
         Me.produtosDataGridView.TabStop = False
         '
         'Nome
         '
-        Me.Nome.FillWeight = 150.0!
+        Me.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nome.FillWeight = 40.0!
         Me.Nome.HeaderText = "Nome"
         Me.Nome.Name = "Nome"
         Me.Nome.ReadOnly = True
-        Me.Nome.Width = 330
         '
         'Preço
         '
-        Me.Preço.FillWeight = 150.0!
+        Me.Preço.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Preço.FillWeight = 15.0!
         Me.Preço.HeaderText = "Preço"
         Me.Preço.Name = "Preço"
         Me.Preço.ReadOnly = True
         '
         'Quantidade
         '
-        Me.Quantidade.FillWeight = 150.0!
+        Me.Quantidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Quantidade.FillWeight = 15.0!
         Me.Quantidade.HeaderText = "Quantidade"
         Me.Quantidade.Name = "Quantidade"
         Me.Quantidade.ReadOnly = True
         '
         'Código_de_Barra
         '
-        Me.Código_de_Barra.FillWeight = 150.0!
+        Me.Código_de_Barra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Código_de_Barra.FillWeight = 20.0!
         Me.Código_de_Barra.HeaderText = "Código_de_Barra"
         Me.Código_de_Barra.Name = "Código_de_Barra"
         Me.Código_de_Barra.ReadOnly = True
-        Me.Código_de_Barra.Width = 280
         '
         'Data_Validade
         '
+        Me.Data_Validade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Data_Validade.FillWeight = 15.0!
         Me.Data_Validade.HeaderText = "Data Validade"
         Me.Data_Validade.Name = "Data_Validade"
         Me.Data_Validade.ReadOnly = True
-        Me.Data_Validade.Width = 125
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 33)
+        Me.Label1.Location = New System.Drawing.Point(16, 41)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 20)
+        Me.Label1.Size = New System.Drawing.Size(99, 25)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Pesquisar"
         '
         'consultaTextBox
         '
-        Me.consultaTextBox.Location = New System.Drawing.Point(97, 33)
+        Me.consultaTextBox.Location = New System.Drawing.Point(129, 41)
+        Me.consultaTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.consultaTextBox.Name = "consultaTextBox"
-        Me.consultaTextBox.Size = New System.Drawing.Size(312, 20)
+        Me.consultaTextBox.Size = New System.Drawing.Size(415, 22)
         Me.consultaTextBox.TabIndex = 0
         '
         'nomeRadioButton
         '
         Me.nomeRadioButton.AutoSize = True
         Me.nomeRadioButton.Checked = True
-        Me.nomeRadioButton.Location = New System.Drawing.Point(429, 33)
+        Me.nomeRadioButton.Location = New System.Drawing.Point(572, 41)
+        Me.nomeRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.nomeRadioButton.Name = "nomeRadioButton"
-        Me.nomeRadioButton.Size = New System.Drawing.Size(53, 17)
+        Me.nomeRadioButton.Size = New System.Drawing.Size(66, 21)
         Me.nomeRadioButton.TabIndex = 3
         Me.nomeRadioButton.TabStop = True
         Me.nomeRadioButton.Text = "Nome"
@@ -151,9 +158,10 @@ Partial Class Consulta
         'codigoRadioButton
         '
         Me.codigoRadioButton.AutoSize = True
-        Me.codigoRadioButton.Location = New System.Drawing.Point(488, 56)
+        Me.codigoRadioButton.Location = New System.Drawing.Point(651, 69)
+        Me.codigoRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.codigoRadioButton.Name = "codigoRadioButton"
-        Me.codigoRadioButton.Size = New System.Drawing.Size(101, 17)
+        Me.codigoRadioButton.Size = New System.Drawing.Size(132, 21)
         Me.codigoRadioButton.TabIndex = 4
         Me.codigoRadioButton.Text = "Código de Barra"
         Me.codigoRadioButton.UseVisualStyleBackColor = True
@@ -161,9 +169,10 @@ Partial Class Consulta
         'quantidadeRadioButton
         '
         Me.quantidadeRadioButton.AutoSize = True
-        Me.quantidadeRadioButton.Location = New System.Drawing.Point(488, 33)
+        Me.quantidadeRadioButton.Location = New System.Drawing.Point(651, 41)
+        Me.quantidadeRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.quantidadeRadioButton.Name = "quantidadeRadioButton"
-        Me.quantidadeRadioButton.Size = New System.Drawing.Size(80, 17)
+        Me.quantidadeRadioButton.Size = New System.Drawing.Size(103, 21)
         Me.quantidadeRadioButton.TabIndex = 5
         Me.quantidadeRadioButton.Text = "Quantidade"
         Me.quantidadeRadioButton.UseVisualStyleBackColor = True
@@ -171,9 +180,10 @@ Partial Class Consulta
         'PreçoRadioButton
         '
         Me.PreçoRadioButton.AutoSize = True
-        Me.PreçoRadioButton.Location = New System.Drawing.Point(429, 56)
+        Me.PreçoRadioButton.Location = New System.Drawing.Point(572, 69)
+        Me.PreçoRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.PreçoRadioButton.Name = "PreçoRadioButton"
-        Me.PreçoRadioButton.Size = New System.Drawing.Size(53, 17)
+        Me.PreçoRadioButton.Size = New System.Drawing.Size(66, 21)
         Me.PreçoRadioButton.TabIndex = 6
         Me.PreçoRadioButton.Text = "Preço"
         Me.PreçoRadioButton.UseVisualStyleBackColor = True
@@ -183,9 +193,10 @@ Partial Class Consulta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(788, 18)
+        Me.Label2.Location = New System.Drawing.Point(1051, 22)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(127, 17)
+        Me.Label2.Size = New System.Drawing.Size(150, 20)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Produtos Vencidos"
         '
@@ -194,9 +205,10 @@ Partial Class Consulta
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(788, 43)
+        Me.Label3.Location = New System.Drawing.Point(1051, 53)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(189, 17)
+        Me.Label3.Size = New System.Drawing.Size(226, 20)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Produtos com Baixo Estoque"
         '
@@ -205,9 +217,10 @@ Partial Class Consulta
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Green
-        Me.Label4.Location = New System.Drawing.Point(788, 69)
+        Me.Label4.Location = New System.Drawing.Point(1051, 85)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 17)
+        Me.Label4.Size = New System.Drawing.Size(105, 20)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Produtos OK"
         '
@@ -216,17 +229,20 @@ Partial Class Consulta
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(683, 37)
+        Me.Label5.Location = New System.Drawing.Point(911, 46)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(90, 24)
+        Me.Label5.Size = New System.Drawing.Size(114, 29)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Legenda:"
         '
         'Consulta
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 729)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(1344, 897)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -238,6 +254,7 @@ Partial Class Consulta
         Me.Controls.Add(Me.consultaTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.produtosDataGridView)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Consulta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta"
@@ -254,13 +271,13 @@ Partial Class Consulta
     Friend WithEvents codigoRadioButton As RadioButton
     Friend WithEvents quantidadeRadioButton As RadioButton
     Friend WithEvents PreçoRadioButton As RadioButton
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
     Friend WithEvents Nome As DataGridViewTextBoxColumn
     Friend WithEvents Preço As DataGridViewTextBoxColumn
     Friend WithEvents Quantidade As DataGridViewTextBoxColumn
     Friend WithEvents Código_de_Barra As DataGridViewTextBoxColumn
     Friend WithEvents Data_Validade As DataGridViewTextBoxColumn
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
 End Class

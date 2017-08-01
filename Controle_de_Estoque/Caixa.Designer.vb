@@ -63,18 +63,20 @@ Partial Class Caixa
         'codigoTextBox
         '
         Me.codigoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.codigoTextBox.Location = New System.Drawing.Point(567, 26)
+        Me.codigoTextBox.Location = New System.Drawing.Point(756, 32)
+        Me.codigoTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.codigoTextBox.Name = "codigoTextBox"
-        Me.codigoTextBox.Size = New System.Drawing.Size(358, 26)
+        Me.codigoTextBox.Size = New System.Drawing.Size(476, 30)
         Me.codigoTextBox.TabIndex = 0
         '
         'CaixaCodigoBarra
         '
         Me.CaixaCodigoBarra.AutoSize = True
         Me.CaixaCodigoBarra.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CaixaCodigoBarra.Location = New System.Drawing.Point(563, 3)
+        Me.CaixaCodigoBarra.Location = New System.Drawing.Point(751, 4)
+        Me.CaixaCodigoBarra.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.CaixaCodigoBarra.Name = "CaixaCodigoBarra"
-        Me.CaixaCodigoBarra.Size = New System.Drawing.Size(136, 20)
+        Me.CaixaCodigoBarra.Size = New System.Drawing.Size(170, 25)
         Me.CaixaCodigoBarra.TabIndex = 1
         Me.CaixaCodigoBarra.Text = "Código de Barras:"
         '
@@ -82,9 +84,10 @@ Partial Class Caixa
         '
         Me.CaixaQuantidade.AutoSize = True
         Me.CaixaQuantidade.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CaixaQuantidade.Location = New System.Drawing.Point(927, 3)
+        Me.CaixaQuantidade.Location = New System.Drawing.Point(1236, 4)
+        Me.CaixaQuantidade.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.CaixaQuantidade.Name = "CaixaQuantidade"
-        Me.CaixaQuantidade.Size = New System.Drawing.Size(96, 20)
+        Me.CaixaQuantidade.Size = New System.Drawing.Size(120, 25)
         Me.CaixaQuantidade.TabIndex = 3
         Me.CaixaQuantidade.Text = "Quantidade:"
         '
@@ -96,10 +99,11 @@ Partial Class Caixa
         Me.produtosListView.FullRowSelect = True
         Me.produtosListView.GridLines = True
         Me.produtosListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.produtosListView.Location = New System.Drawing.Point(567, 58)
+        Me.produtosListView.Location = New System.Drawing.Point(756, 71)
+        Me.produtosListView.Margin = New System.Windows.Forms.Padding(4)
         Me.produtosListView.MultiSelect = False
         Me.produtosListView.Name = "produtosListView"
-        Me.produtosListView.Size = New System.Drawing.Size(456, 642)
+        Me.produtosListView.Size = New System.Drawing.Size(607, 790)
         Me.produtosListView.TabIndex = 4
         Me.produtosListView.TabStop = False
         Me.produtosListView.UseCompatibleStateImageBehavior = False
@@ -108,32 +112,34 @@ Partial Class Caixa
         'Produto
         '
         Me.Produto.Text = "Produto:"
-        Me.Produto.Width = 315
+        Me.Produto.Width = 427
         '
         'Preço
         '
         Me.Preço.Text = "Preço:"
-        Me.Preço.Width = 70
+        Me.Preço.Width = 93
         '
         'Quantidade
         '
         Me.Quantidade.Text = "Quant:"
-        Me.Quantidade.Width = 70
+        Me.Quantidade.Width = 220
         '
         'quantidadeNumericUpDown
         '
         Me.quantidadeNumericUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.quantidadeNumericUpDown.Location = New System.Drawing.Point(931, 26)
+        Me.quantidadeNumericUpDown.Location = New System.Drawing.Point(1241, 32)
+        Me.quantidadeNumericUpDown.Margin = New System.Windows.Forms.Padding(4)
         Me.quantidadeNumericUpDown.Name = "quantidadeNumericUpDown"
-        Me.quantidadeNumericUpDown.Size = New System.Drawing.Size(92, 26)
+        Me.quantidadeNumericUpDown.Size = New System.Drawing.Size(123, 30)
         Me.quantidadeNumericUpDown.TabIndex = 6
         '
         'finalizarButton
         '
         Me.finalizarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.finalizarButton.Location = New System.Drawing.Point(12, 58)
+        Me.finalizarButton.Location = New System.Drawing.Point(16, 71)
+        Me.finalizarButton.Margin = New System.Windows.Forms.Padding(4)
         Me.finalizarButton.Name = "finalizarButton"
-        Me.finalizarButton.Size = New System.Drawing.Size(85, 113)
+        Me.finalizarButton.Size = New System.Drawing.Size(113, 139)
         Me.finalizarButton.TabIndex = 1000000
         Me.finalizarButton.TabStop = False
         Me.finalizarButton.Tag = "21"
@@ -143,9 +149,10 @@ Partial Class Caixa
         'resetarButton
         '
         Me.resetarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.resetarButton.Location = New System.Drawing.Point(12, 534)
+        Me.resetarButton.Location = New System.Drawing.Point(16, 657)
+        Me.resetarButton.Margin = New System.Windows.Forms.Padding(4)
         Me.resetarButton.Name = "resetarButton"
-        Me.resetarButton.Size = New System.Drawing.Size(85, 113)
+        Me.resetarButton.Size = New System.Drawing.Size(113, 139)
         Me.resetarButton.TabIndex = 1000001
         Me.resetarButton.TabStop = False
         Me.resetarButton.Tag = "24"
@@ -156,10 +163,11 @@ Partial Class Caixa
         '
         Me.valorTotalTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.valorTotalTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.valorTotalTextBox.Location = New System.Drawing.Point(810, 706)
+        Me.valorTotalTextBox.Location = New System.Drawing.Point(1080, 869)
+        Me.valorTotalTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.valorTotalTextBox.Name = "valorTotalTextBox"
         Me.valorTotalTextBox.ReadOnly = True
-        Me.valorTotalTextBox.Size = New System.Drawing.Size(205, 53)
+        Me.valorTotalTextBox.Size = New System.Drawing.Size(272, 64)
         Me.valorTotalTextBox.TabIndex = 1000002
         Me.valorTotalTextBox.TabStop = False
         Me.valorTotalTextBox.Text = "R$ 0,00"
@@ -171,18 +179,20 @@ Partial Class Caixa
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CaixaValorTotal.AutoSize = True
         Me.CaixaValorTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CaixaValorTotal.Location = New System.Drawing.Point(567, 709)
+        Me.CaixaValorTotal.Location = New System.Drawing.Point(756, 873)
+        Me.CaixaValorTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.CaixaValorTotal.Name = "CaixaValorTotal"
-        Me.CaixaValorTotal.Size = New System.Drawing.Size(237, 46)
+        Me.CaixaValorTotal.Size = New System.Drawing.Size(293, 58)
         Me.CaixaValorTotal.TabIndex = 1000005
         Me.CaixaValorTotal.Text = "Valor Total:"
         '
         'CaixaFecharButton
         '
         Me.CaixaFecharButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CaixaFecharButton.Location = New System.Drawing.Point(12, 653)
+        Me.CaixaFecharButton.Location = New System.Drawing.Point(16, 804)
+        Me.CaixaFecharButton.Margin = New System.Windows.Forms.Padding(4)
         Me.CaixaFecharButton.Name = "CaixaFecharButton"
-        Me.CaixaFecharButton.Size = New System.Drawing.Size(85, 113)
+        Me.CaixaFecharButton.Size = New System.Drawing.Size(113, 139)
         Me.CaixaFecharButton.TabIndex = 1000008
         Me.CaixaFecharButton.TabStop = False
         Me.CaixaFecharButton.Tag = "25"
@@ -192,9 +202,10 @@ Partial Class Caixa
         'CaixaConsultaButton
         '
         Me.CaixaConsultaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CaixaConsultaButton.Location = New System.Drawing.Point(12, 177)
+        Me.CaixaConsultaButton.Location = New System.Drawing.Point(16, 218)
+        Me.CaixaConsultaButton.Margin = New System.Windows.Forms.Padding(4)
         Me.CaixaConsultaButton.Name = "CaixaConsultaButton"
-        Me.CaixaConsultaButton.Size = New System.Drawing.Size(85, 113)
+        Me.CaixaConsultaButton.Size = New System.Drawing.Size(113, 139)
         Me.CaixaConsultaButton.TabIndex = 1000009
         Me.CaixaConsultaButton.TabStop = False
         Me.CaixaConsultaButton.Tag = "22"
@@ -204,9 +215,10 @@ Partial Class Caixa
         'CaixaCancelButton
         '
         Me.CaixaCancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CaixaCancelButton.Location = New System.Drawing.Point(12, 296)
+        Me.CaixaCancelButton.Location = New System.Drawing.Point(16, 364)
+        Me.CaixaCancelButton.Margin = New System.Windows.Forms.Padding(4)
         Me.CaixaCancelButton.Name = "CaixaCancelButton"
-        Me.CaixaCancelButton.Size = New System.Drawing.Size(85, 113)
+        Me.CaixaCancelButton.Size = New System.Drawing.Size(113, 139)
         Me.CaixaCancelButton.TabIndex = 1000010
         Me.CaixaCancelButton.TabStop = False
         Me.CaixaCancelButton.Tag = "23"
@@ -217,9 +229,10 @@ Partial Class Caixa
         '
         Me.userLoggedLabel.AutoSize = True
         Me.userLoggedLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.userLoggedLabel.Location = New System.Drawing.Point(6, 9)
+        Me.userLoggedLabel.Location = New System.Drawing.Point(8, 11)
+        Me.userLoggedLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.userLoggedLabel.Name = "userLoggedLabel"
-        Me.userLoggedLabel.Size = New System.Drawing.Size(228, 31)
+        Me.userLoggedLabel.Size = New System.Drawing.Size(282, 39)
         Me.userLoggedLabel.TabIndex = 1000012
         Me.userLoggedLabel.Text = "Usuário Logado:"
         '
@@ -228,9 +241,10 @@ Partial Class Caixa
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(103, 330)
+        Me.Button1.Location = New System.Drawing.Point(137, 406)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 140)
+        Me.Button1.Size = New System.Drawing.Size(147, 172)
         Me.Button1.TabIndex = 1000013
         Me.Button1.TabStop = False
         Me.Button1.Tag = "0"
@@ -242,9 +256,10 @@ Partial Class Caixa
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button3.Location = New System.Drawing.Point(335, 330)
+        Me.Button3.Location = New System.Drawing.Point(447, 406)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(110, 140)
+        Me.Button3.Size = New System.Drawing.Size(147, 172)
         Me.Button3.TabIndex = 1000015
         Me.Button3.TabStop = False
         Me.Button3.Tag = "2"
@@ -256,9 +271,10 @@ Partial Class Caixa
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button4.Location = New System.Drawing.Point(451, 330)
+        Me.Button4.Location = New System.Drawing.Point(601, 406)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(110, 140)
+        Me.Button4.Size = New System.Drawing.Size(147, 172)
         Me.Button4.TabIndex = 1000016
         Me.Button4.TabStop = False
         Me.Button4.Tag = "3"
@@ -270,9 +286,10 @@ Partial Class Caixa
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button5.Location = New System.Drawing.Point(103, 476)
+        Me.Button5.Location = New System.Drawing.Point(137, 586)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(110, 140)
+        Me.Button5.Size = New System.Drawing.Size(147, 172)
         Me.Button5.TabIndex = 1000017
         Me.Button5.TabStop = False
         Me.Button5.Tag = "4"
@@ -284,9 +301,10 @@ Partial Class Caixa
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button6.Location = New System.Drawing.Point(219, 476)
+        Me.Button6.Location = New System.Drawing.Point(292, 586)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(4)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(110, 140)
+        Me.Button6.Size = New System.Drawing.Size(147, 172)
         Me.Button6.TabIndex = 1000020
         Me.Button6.TabStop = False
         Me.Button6.Tag = "5"
@@ -298,9 +316,10 @@ Partial Class Caixa
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button7.Location = New System.Drawing.Point(335, 476)
+        Me.Button7.Location = New System.Drawing.Point(447, 586)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(4)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(110, 140)
+        Me.Button7.Size = New System.Drawing.Size(147, 172)
         Me.Button7.TabIndex = 1000019
         Me.Button7.TabStop = False
         Me.Button7.Tag = "6"
@@ -312,9 +331,10 @@ Partial Class Caixa
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button8.Location = New System.Drawing.Point(451, 476)
+        Me.Button8.Location = New System.Drawing.Point(601, 586)
+        Me.Button8.Margin = New System.Windows.Forms.Padding(4)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(110, 140)
+        Me.Button8.Size = New System.Drawing.Size(147, 172)
         Me.Button8.TabIndex = 1000018
         Me.Button8.TabStop = False
         Me.Button8.Tag = "7"
@@ -326,9 +346,10 @@ Partial Class Caixa
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.Location = New System.Drawing.Point(219, 330)
+        Me.Button2.Location = New System.Drawing.Point(292, 406)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 140)
+        Me.Button2.Size = New System.Drawing.Size(147, 172)
         Me.Button2.TabIndex = 1000025
         Me.Button2.TabStop = False
         Me.Button2.Tag = "1"
@@ -340,9 +361,10 @@ Partial Class Caixa
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button9.Location = New System.Drawing.Point(103, 622)
+        Me.Button9.Location = New System.Drawing.Point(137, 766)
+        Me.Button9.Margin = New System.Windows.Forms.Padding(4)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(110, 140)
+        Me.Button9.Size = New System.Drawing.Size(147, 172)
         Me.Button9.TabIndex = 1000024
         Me.Button9.TabStop = False
         Me.Button9.Tag = "8"
@@ -354,9 +376,10 @@ Partial Class Caixa
         Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button10.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button10.Location = New System.Drawing.Point(219, 622)
+        Me.Button10.Location = New System.Drawing.Point(292, 766)
+        Me.Button10.Margin = New System.Windows.Forms.Padding(4)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(110, 140)
+        Me.Button10.Size = New System.Drawing.Size(147, 172)
         Me.Button10.TabIndex = 1000023
         Me.Button10.TabStop = False
         Me.Button10.Tag = "9"
@@ -368,9 +391,10 @@ Partial Class Caixa
         Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button11.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button11.Location = New System.Drawing.Point(335, 622)
+        Me.Button11.Location = New System.Drawing.Point(447, 766)
+        Me.Button11.Margin = New System.Windows.Forms.Padding(4)
         Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(110, 140)
+        Me.Button11.Size = New System.Drawing.Size(147, 172)
         Me.Button11.TabIndex = 1000022
         Me.Button11.TabStop = False
         Me.Button11.Tag = "10"
@@ -382,9 +406,10 @@ Partial Class Caixa
         Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button12.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button12.Location = New System.Drawing.Point(451, 622)
+        Me.Button12.Location = New System.Drawing.Point(601, 766)
+        Me.Button12.Margin = New System.Windows.Forms.Padding(4)
         Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(110, 140)
+        Me.Button12.Size = New System.Drawing.Size(147, 172)
         Me.Button12.TabIndex = 999999
         Me.Button12.TabStop = False
         Me.Button12.Tag = "11"
@@ -393,9 +418,10 @@ Partial Class Caixa
         '
         'logoEmpresaPictureBox
         '
-        Me.logoEmpresaPictureBox.Location = New System.Drawing.Point(105, 58)
+        Me.logoEmpresaPictureBox.Location = New System.Drawing.Point(140, 71)
+        Me.logoEmpresaPictureBox.Margin = New System.Windows.Forms.Padding(4)
         Me.logoEmpresaPictureBox.Name = "logoEmpresaPictureBox"
-        Me.logoEmpresaPictureBox.Size = New System.Drawing.Size(456, 261)
+        Me.logoEmpresaPictureBox.Size = New System.Drawing.Size(608, 321)
         Me.logoEmpresaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.logoEmpresaPictureBox.TabIndex = 1000021
         Me.logoEmpresaPictureBox.TabStop = False
@@ -403,9 +429,10 @@ Partial Class Caixa
         'retiradaCaixaButton
         '
         Me.retiradaCaixaButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.retiradaCaixaButton.Location = New System.Drawing.Point(12, 415)
+        Me.retiradaCaixaButton.Location = New System.Drawing.Point(16, 511)
+        Me.retiradaCaixaButton.Margin = New System.Windows.Forms.Padding(4)
         Me.retiradaCaixaButton.Name = "retiradaCaixaButton"
-        Me.retiradaCaixaButton.Size = New System.Drawing.Size(85, 113)
+        Me.retiradaCaixaButton.Size = New System.Drawing.Size(113, 139)
         Me.retiradaCaixaButton.TabIndex = 1000026
         Me.retiradaCaixaButton.TabStop = False
         Me.retiradaCaixaButton.Tag = "24"
@@ -414,9 +441,10 @@ Partial Class Caixa
         '
         'Caixa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(1365, 945)
         Me.Controls.Add(Me.retiradaCaixaButton)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button9)
@@ -447,7 +475,9 @@ Partial Class Caixa
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Caixa"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "4"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.quantidadeNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()

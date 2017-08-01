@@ -283,6 +283,8 @@
     <None Include="Resources\default_logo.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Icone_logoff_form_admin.png" />
+    <None Include="Resources\caixa_abrir_form_admin.png" />
     <Content Include="Resources\controle_de_estoque.ico" />
     <None Include="Resources\admin_background.jpg" />
     <None Include="Resources\caixa_abrir.png" />

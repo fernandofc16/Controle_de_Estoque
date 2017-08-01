@@ -38,13 +38,13 @@ Public Class Produtos_Categoria
 
         Select Case itensInCategoria
             Case Is <= 3
-                Me.Size = New Size(380, 175)
+                Me.Size = New Size(390, 180)
             Case 4 To 6
-                Me.Size = New Size(380, 175 + 130)
+                Me.Size = New Size(390, 180 + 130)
             Case 7 To 9
-                Me.Size = New Size(380, 175 + 265)
+                Me.Size = New Size(390, 180 + 265)
             Case Is >= 10
-                Me.Size = New Size(400, 175 + 265)
+                Me.Size = New Size(410, 180 + 265)
         End Select
 
         If (itensInCategoria = 1) Then

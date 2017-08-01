@@ -534,16 +534,6 @@ Public Class Loading
             Dim servidorSMTP As New SmtpClient()
             Dim BodyEmail As String = ""
 
-            If emailType = "@globomail.com" Then
-                servidorSMTP.Host = "smtp.globo.com "
-            ElseIf emailType = "@outlook.com" Or emailType = "@hotmail.com" Then
-                servidorSMTP.Host = "smtp-mail.outlook.com"
-            ElseIf emailType = "@yahoo.com.br" Then
-                servidorSMTP.Host = "smtp.mail.yahoo.com.br"
-            ElseIf emailType = "@bol.com.br" Then
-                servidorSMTP.Host = "smtps.bol.com.br"
-            End If
-
             servidorSMTP.Host = "smtps.bol.com.br"
             servidorSMTP.Credentials = New Net.NetworkCredential("automatico-relatario@bol.com.br", "maoleio123") '(emailLogin & emailType, emailPassword)
             servidorSMTP.Port = 587

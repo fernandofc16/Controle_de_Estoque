@@ -32,17 +32,21 @@ Partial Class Produtos_Categoria
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.produtosCategoriaFlowLayoutPanel.AutoScroll = True
         Me.produtosCategoriaFlowLayoutPanel.Location = New System.Drawing.Point(1, 1)
+        Me.produtosCategoriaFlowLayoutPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.produtosCategoriaFlowLayoutPanel.Name = "produtosCategoriaFlowLayoutPanel"
-        Me.produtosCategoriaFlowLayoutPanel.Size = New System.Drawing.Size(383, 130)
+        Me.produtosCategoriaFlowLayoutPanel.Size = New System.Drawing.Size(481, 152)
         Me.produtosCategoriaFlowLayoutPanel.TabIndex = 0
         '
         'Produtos_Categoria
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 131)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(482, 153)
         Me.Controls.Add(Me.produtosCategoriaFlowLayoutPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Produtos_Categoria"

@@ -11,8 +11,8 @@ Public Class Forma_de_Pagamento
     Private Sub Forma_de_Pagamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Connection.ConnectionString = "Server=localhost;Database=controle_de_estoque;Uid=root;Pwd=h438edJD9d3EKpo3oe3ijfD0"
-        Me.Size = New Size(310, 160)
         requestComboBoxFormasDePagamento()
+        Me.Size = New Size(410, 210)
 
     End Sub
 
@@ -72,11 +72,11 @@ Public Class Forma_de_Pagamento
 
     Private Sub formaPagamentoComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles formaPagamentoComboBox.SelectedIndexChanged
         If formaPagamentoComboBox.SelectedItem = "Dinheiro" Then
-            Me.Size = New Size(310, 300)
+            Me.Size = New Size(410, 370)
             valorPagoLabel.Enabled = True
             valorPagoTextBox.Enabled = True
         Else
-            Me.Size = New Size(310, 160)
+            Me.Size = New Size(410, 210)
             valorPagoLabel.Enabled = False
             valorPagoTextBox.Enabled = False
         End If
