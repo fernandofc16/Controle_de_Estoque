@@ -1621,7 +1621,7 @@ Public Class Form_Admin
             funcionariosCadComboBox.Items.Add("Nenhum Funcionário Cadastrado")
         End If
 
-        If funcionariosCadComboBox.Items.Count <> employeeFiadoSelected + 1 Then
+        If funcionariosCadComboBox.Items.Count < employeeFiadoSelected + 1 Then
             funcionariosCadComboBox.SelectedIndex = 0
         Else
             funcionariosCadComboBox.SelectedIndex = employeeFiadoSelected

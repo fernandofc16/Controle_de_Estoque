@@ -38,13 +38,13 @@ Public Class Caixa
         Dim RH As Double
 
         If My.Computer.Screen.Bounds.Width >= 1920 Then
-            RW = (CW - 1365) / CW ' Ratio change of width
-            RH = (CH - 950) / CH ' Ratio change of height
+            RW = (CW - 1150) / CW ' Ratio change of width
+            RH = (CH - 925) / CH ' Ratio change of height
         ElseIf My.Computer.Screen.Bounds.Width <= 1024 Then
-            RW = (CW - 1290) / CW ' Ratio change of width
+            RW = (CW - 1280) / CW ' Ratio change of width
             RH = (CH - 920) / CH ' Ratio change of height
         Else
-            MsgBox("ELSE" & My.Computer.Screen.Bounds.Width)
+            'MsgBox("ELSE" & My.Computer.Screen.Bounds.Width)
             RW = (CW - 1365) / CW ' Ratio change of width
             RH = (CH - 935) / CH ' Ratio change of height
         End If
@@ -97,6 +97,8 @@ Public Class Caixa
                 Me.Quantidade.Width = 190
                 userLoggedLabel.Font = New Font("Microsoft Sans Serif", 30.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 finalizarButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                valorTotalTextBox.Font = New Font("Microsoft Sans Serif", 34.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaValorTotal.Font = New Font("Microsoft Sans Serif", 34.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
@@ -108,45 +110,49 @@ Public Class Caixa
                 quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 produtosListView.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 For Each button As Button In arrayButtons
-                    button.Font = New Font("Microsoft Sans Serif", 14.5!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                    button.Font = New Font("Microsoft Sans Serif", 12.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 Next
             Case 1680 To 1919 'ERRO
                 Me.Produto.Width = 370
                 Me.Preço.Width = 185
                 Me.Quantidade.Width = 185
                 userLoggedLabel.Font = New Font("Microsoft Sans Serif", 30.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                finalizarButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                resetarButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                codigoTextBox.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                produtosListView.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                finalizarButton.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                valorTotalTextBox.Font = New Font("Microsoft Sans Serif", 30.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaValorTotal.Font = New Font("Microsoft Sans Serif", 30.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                resetarButton.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                codigoTextBox.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                produtosListView.Font = New Font("Microsoft Sans Serif", 16.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 For Each button As Button In arrayButtons
-                    button.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                    button.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 Next
             Case 1600 To 1679 'ERRO
                 Me.Produto.Width = 350
                 Me.Preço.Width = 180
                 Me.Quantidade.Width = 180
                 userLoggedLabel.Font = New Font("Microsoft Sans Serif", 30.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                finalizarButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                resetarButton.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                codigoTextBox.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                produtosListView.Font = New Font("Microsoft Sans Serif", 18.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                finalizarButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                valorTotalTextBox.Font = New Font("Microsoft Sans Serif", 22.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaValorTotal.Font = New Font("Microsoft Sans Serif", 22.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                resetarButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                codigoTextBox.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                produtosListView.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 For Each button As Button In arrayButtons
-                    button.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                    button.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 Next
             Case 1440 To 1599 'ERROR
                 Me.Produto.Width = 330
@@ -154,6 +160,8 @@ Public Class Caixa
                 Me.Quantidade.Width = 170
                 userLoggedLabel.Font = New Font("Microsoft Sans Serif", 22.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 finalizarButton.Font = New Font("Microsoft Sans Serif", 12.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                valorTotalTextBox.Font = New Font("Microsoft Sans Serif", 22.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaValorTotal.Font = New Font("Microsoft Sans Serif", 22.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 12.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 12.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 12.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
@@ -171,39 +179,41 @@ Public Class Caixa
                 Me.Produto.Width = 300
                 Me.Preço.Width = 150
                 Me.Quantidade.Width = 150
-                userLoggedLabel.Font = New Font("Microsoft Sans Serif", 25.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                finalizarButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                resetarButton.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                codigoTextBox.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                produtosListView.Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                userLoggedLabel.Font = New Font("Microsoft Sans Serif", 23.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                finalizarButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                valorTotalTextBox.Font = New Font("Microsoft Sans Serif", 24.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaValorTotal.Font = New Font("Microsoft Sans Serif", 24.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                resetarButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                codigoTextBox.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                produtosListView.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 For Each button As Button In arrayButtons
-                    button.Font = New Font("Microsoft Sans Serif", 11.5!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                    button.Font = New Font("Microsoft Sans Serif", 10.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 Next
             Case 1280 To 1365 'ERRO
                 Me.Produto.Width = 285
                 Me.Preço.Width = 135
                 Me.Quantidade.Width = 135
                 userLoggedLabel.Font = New Font("Microsoft Sans Serif", 23.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                finalizarButton.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                finalizarButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 valorTotalTextBox.Font = New Font("Microsoft Sans Serif", 23.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 CaixaValorTotal.Font = New Font("Microsoft Sans Serif", 23.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                resetarButton.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                codigoTextBox.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
-                produtosListView.Font = New Font("Microsoft Sans Serif", 13.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaConsultaButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCancelButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                retiradaCaixaButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaFecharButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                resetarButton.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaCodigoBarra.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                CaixaQuantidade.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                codigoTextBox.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                quantidadeNumericUpDown.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                produtosListView.Font = New Font("Microsoft Sans Serif", 11.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 For Each button As Button In arrayButtons
                     button.Font = New Font("Microsoft Sans Serif", 10.5!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 Next
@@ -239,6 +249,7 @@ Public Class Caixa
     Private Sub Caixa_Employee_Closed(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Closed
         Form_Admin.canSearchProdGridView = False
         reportAccess("FECHADO")
+        Loading.ShowDialog()
         setUserDislogged()
         Form_Admin.Show()
         Form_Admin.canSearchProdGridView = True

@@ -88,6 +88,18 @@ Public Class Forma_de_Pagamento
 
     Private Sub valorPagoTextBox_TextChanged(sender As Object, e As EventArgs) Handles valorPagoTextBox.TextChanged
 
+        If (valorPagoTextBox.Text.Trim <> "") Then
+
+            valorPagoTextBox.SelectionStart = valorPagoTextBox.Text.Length
+            Dim cleanString As String = valorPagoTextBox.Text.ToString.Replace(",", "")
+            Dim cleanString2 As String = cleanString.Replace("R$", "")
+
+            Dim parsed As Double = Double.Parse(cleanString2.Trim)
+            Dim stringFormatted As String = FormatCurrency(parsed / 100)
+            valorPagoTextBox.Text = stringFormatted
+
+        End If
+
         Dim troco As Double = 0
         Try
             If valorPagoTextBox.Text.Replace("R$", "").Trim <> "" Then

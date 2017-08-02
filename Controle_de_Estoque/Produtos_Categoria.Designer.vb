@@ -34,16 +34,15 @@ Partial Class Produtos_Categoria
         Me.produtosCategoriaFlowLayoutPanel.Location = New System.Drawing.Point(1, 1)
         Me.produtosCategoriaFlowLayoutPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.produtosCategoriaFlowLayoutPanel.Name = "produtosCategoriaFlowLayoutPanel"
-        Me.produtosCategoriaFlowLayoutPanel.Size = New System.Drawing.Size(481, 152)
+        Me.produtosCategoriaFlowLayoutPanel.Size = New System.Drawing.Size(481, 132)
         Me.produtosCategoriaFlowLayoutPanel.TabIndex = 0
         '
         'Produtos_Categoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(482, 153)
+        Me.ClientSize = New System.Drawing.Size(482, 133)
         Me.Controls.Add(Me.produtosCategoriaFlowLayoutPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4)

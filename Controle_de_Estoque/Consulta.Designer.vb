@@ -22,9 +22,9 @@ Partial Class Consulta
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.produtosDataGridView = New System.Windows.Forms.DataGridView()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Preço = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,38 +48,38 @@ Partial Class Consulta
         '
         Me.produtosDataGridView.AllowUserToAddRows = False
         Me.produtosDataGridView.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.produtosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.produtosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.produtosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.produtosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.Preço, Me.Quantidade, Me.Código_de_Barra, Me.Data_Validade})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.produtosDataGridView.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.produtosDataGridView.DefaultCellStyle = DataGridViewCellStyle20
         Me.produtosDataGridView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.produtosDataGridView.Location = New System.Drawing.Point(3, 122)
         Me.produtosDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.produtosDataGridView.Name = "produtosDataGridView"
         Me.produtosDataGridView.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.produtosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.produtosDataGridView.Size = New System.Drawing.Size(1339, 773)
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.produtosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle21
+        Me.produtosDataGridView.Size = New System.Drawing.Size(906, 773)
         Me.produtosDataGridView.TabIndex = 0
         Me.produtosDataGridView.TabStop = False
         '
@@ -127,7 +127,7 @@ Partial Class Consulta
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 41)
+        Me.Label1.Location = New System.Drawing.Point(13, 17)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(99, 25)
@@ -136,7 +136,7 @@ Partial Class Consulta
         '
         'consultaTextBox
         '
-        Me.consultaTextBox.Location = New System.Drawing.Point(129, 41)
+        Me.consultaTextBox.Location = New System.Drawing.Point(114, 20)
         Me.consultaTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.consultaTextBox.Name = "consultaTextBox"
         Me.consultaTextBox.Size = New System.Drawing.Size(415, 22)
@@ -146,7 +146,7 @@ Partial Class Consulta
         '
         Me.nomeRadioButton.AutoSize = True
         Me.nomeRadioButton.Checked = True
-        Me.nomeRadioButton.Location = New System.Drawing.Point(572, 41)
+        Me.nomeRadioButton.Location = New System.Drawing.Point(114, 56)
         Me.nomeRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.nomeRadioButton.Name = "nomeRadioButton"
         Me.nomeRadioButton.Size = New System.Drawing.Size(66, 21)
@@ -158,7 +158,7 @@ Partial Class Consulta
         'codigoRadioButton
         '
         Me.codigoRadioButton.AutoSize = True
-        Me.codigoRadioButton.Location = New System.Drawing.Point(651, 69)
+        Me.codigoRadioButton.Location = New System.Drawing.Point(205, 84)
         Me.codigoRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.codigoRadioButton.Name = "codigoRadioButton"
         Me.codigoRadioButton.Size = New System.Drawing.Size(132, 21)
@@ -169,7 +169,7 @@ Partial Class Consulta
         'quantidadeRadioButton
         '
         Me.quantidadeRadioButton.AutoSize = True
-        Me.quantidadeRadioButton.Location = New System.Drawing.Point(651, 41)
+        Me.quantidadeRadioButton.Location = New System.Drawing.Point(205, 56)
         Me.quantidadeRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.quantidadeRadioButton.Name = "quantidadeRadioButton"
         Me.quantidadeRadioButton.Size = New System.Drawing.Size(103, 21)
@@ -180,7 +180,7 @@ Partial Class Consulta
         'PreçoRadioButton
         '
         Me.PreçoRadioButton.AutoSize = True
-        Me.PreçoRadioButton.Location = New System.Drawing.Point(572, 69)
+        Me.PreçoRadioButton.Location = New System.Drawing.Point(114, 84)
         Me.PreçoRadioButton.Margin = New System.Windows.Forms.Padding(4)
         Me.PreçoRadioButton.Name = "PreçoRadioButton"
         Me.PreçoRadioButton.Size = New System.Drawing.Size(66, 21)
@@ -193,7 +193,7 @@ Partial Class Consulta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(1051, 22)
+        Me.Label2.Location = New System.Drawing.Point(683, 25)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(150, 20)
@@ -205,7 +205,7 @@ Partial Class Consulta
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(1051, 53)
+        Me.Label3.Location = New System.Drawing.Point(683, 56)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(226, 20)
@@ -217,7 +217,7 @@ Partial Class Consulta
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Green
-        Me.Label4.Location = New System.Drawing.Point(1051, 85)
+        Me.Label4.Location = New System.Drawing.Point(683, 88)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(105, 20)
@@ -229,7 +229,7 @@ Partial Class Consulta
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(911, 46)
+        Me.Label5.Location = New System.Drawing.Point(561, 49)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(114, 29)
@@ -242,7 +242,7 @@ Partial Class Consulta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1344, 897)
+        Me.ClientSize = New System.Drawing.Size(912, 653)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
