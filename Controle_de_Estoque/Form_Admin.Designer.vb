@@ -27,7 +27,6 @@ Partial Class Form_Admin
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Admin))
         Me.TabControlFormAdmin = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -92,14 +91,6 @@ Partial Class Form_Admin
         Me.nomeProdTextBox = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.produtosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.IDProdutos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Preços = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estoque_min = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigo_barra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Data_validade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Data_Att = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.produtoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.idEmployeeTextBox = New System.Windows.Forms.TextBox()
@@ -190,6 +181,14 @@ Partial Class Form_Admin
         Me.funcionariosCadComboBox = New System.Windows.Forms.ComboBox()
         Me.imageFuncCadPictureBox = New System.Windows.Forms.PictureBox()
         Me.selecionarImagemOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.IDProdutos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Preços = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estoque_min = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigo_barra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Data_validade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Data_Att = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControlFormAdmin.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.logoEmpresaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -976,99 +975,27 @@ Partial Class Form_Admin
         Me.produtosDataGridView.AllowUserToResizeRows = False
         Me.produtosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.produtosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDProdutos, Me.DataGridViewTextBoxColumn3, Me.Preços, Me.Estoque_min, Me.Codigo_barra, Me.Quantidade, Me.Data_validade, Me.Data_Att})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.produtosDataGridView.DefaultCellStyle = DataGridViewCellStyle1
         Me.produtosDataGridView.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.produtosDataGridView.Location = New System.Drawing.Point(-5, 273)
         Me.produtosDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.produtosDataGridView.Name = "produtosDataGridView"
         Me.produtosDataGridView.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.produtosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.produtosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.produtosDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.produtosDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.produtosDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.produtosDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.produtosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.produtosDataGridView.Size = New System.Drawing.Size(1005, 375)
         Me.produtosDataGridView.TabIndex = 13
         Me.produtosDataGridView.TabStop = False
-        '
-        'IDProdutos
-        '
-        Me.IDProdutos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.IDProdutos.FillWeight = 3.0!
-        Me.IDProdutos.HeaderText = "ID"
-        Me.IDProdutos.Name = "IDProdutos"
-        Me.IDProdutos.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn3.FillWeight = 25.0!
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Nome"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'Preços
-        '
-        Me.Preços.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Preços.FillWeight = 8.0!
-        Me.Preços.HeaderText = "Preço"
-        Me.Preços.Name = "Preços"
-        Me.Preços.ReadOnly = True
-        '
-        'Estoque_min
-        '
-        Me.Estoque_min.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Estoque_min.FillWeight = 6.25!
-        Me.Estoque_min.HeaderText = "Estoque Mínimo"
-        Me.Estoque_min.Name = "Estoque_min"
-        Me.Estoque_min.ReadOnly = True
-        '
-        'Codigo_barra
-        '
-        Me.Codigo_barra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Codigo_barra.FillWeight = 18.75!
-        Me.Codigo_barra.HeaderText = "Código de Barra"
-        Me.Codigo_barra.Name = "Codigo_barra"
-        Me.Codigo_barra.ReadOnly = True
-        '
-        'Quantidade
-        '
-        Me.Quantidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Quantidade.FillWeight = 8.0!
-        Me.Quantidade.HeaderText = "Quantidade"
-        Me.Quantidade.Name = "Quantidade"
-        Me.Quantidade.ReadOnly = True
-        '
-        'Data_validade
-        '
-        Me.Data_validade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Data_validade.FillWeight = 10.0!
-        Me.Data_validade.HeaderText = "Data Validade"
-        Me.Data_validade.Name = "Data_validade"
-        Me.Data_validade.ReadOnly = True
-        '
-        'Data_Att
-        '
-        Me.Data_Att.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Data_Att.FillWeight = 10.0!
-        Me.Data_Att.HeaderText = "Data Atualização"
-        Me.Data_Att.Name = "Data_Att"
-        Me.Data_Att.ReadOnly = True
         '
         'produtoPictureBox
         '
@@ -1480,14 +1407,14 @@ Partial Class Form_Admin
         Me.reportAccessDataGridView.AllowUserToResizeRows = False
         Me.reportAccessDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.reportAccessDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_report, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.Horas, Me.Datas_Fechado, Me.Horas_Fechado})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.reportAccessDataGridView.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.reportAccessDataGridView.DefaultCellStyle = DataGridViewCellStyle3
         Me.reportAccessDataGridView.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.reportAccessDataGridView.Location = New System.Drawing.Point(-5, 0)
         Me.reportAccessDataGridView.Margin = New System.Windows.Forms.Padding(4)
@@ -2036,14 +1963,14 @@ Partial Class Form_Admin
         Me.produtosEQuantidadesFiadoDataGridView.AllowUserToResizeRows = False
         Me.produtosEQuantidadesFiadoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.produtosEQuantidadesFiadoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProdutosFiadoFunc, Me.QuantidadesFiadoFunc})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.produtosEQuantidadesFiadoDataGridView.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.produtosEQuantidadesFiadoDataGridView.DefaultCellStyle = DataGridViewCellStyle4
         Me.produtosEQuantidadesFiadoDataGridView.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.produtosEQuantidadesFiadoDataGridView.Location = New System.Drawing.Point(463, 192)
         Me.produtosEQuantidadesFiadoDataGridView.Margin = New System.Windows.Forms.Padding(4)
@@ -2122,6 +2049,70 @@ Partial Class Form_Admin
         Me.selecionarImagemOpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *gif) | *.jpg; *.jpeg; *.jpe; *" &
     ".jfif; *.png;  *gif"
         Me.selecionarImagemOpenFileDialog.InitialDirectory = "C:\"
+        '
+        'IDProdutos
+        '
+        Me.IDProdutos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.IDProdutos.FillWeight = 5.0!
+        Me.IDProdutos.HeaderText = "ID"
+        Me.IDProdutos.Name = "IDProdutos"
+        Me.IDProdutos.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn3.FillWeight = 21.0!
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Nome"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'Preços
+        '
+        Me.Preços.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Preços.FillWeight = 8.0!
+        Me.Preços.HeaderText = "Preço"
+        Me.Preços.Name = "Preços"
+        Me.Preços.ReadOnly = True
+        '
+        'Estoque_min
+        '
+        Me.Estoque_min.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Estoque_min.FillWeight = 6.25!
+        Me.Estoque_min.HeaderText = "Estoque Mínimo"
+        Me.Estoque_min.Name = "Estoque_min"
+        Me.Estoque_min.ReadOnly = True
+        '
+        'Codigo_barra
+        '
+        Me.Codigo_barra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Codigo_barra.FillWeight = 14.75!
+        Me.Codigo_barra.HeaderText = "Código de Barra"
+        Me.Codigo_barra.Name = "Codigo_barra"
+        Me.Codigo_barra.ReadOnly = True
+        '
+        'Quantidade
+        '
+        Me.Quantidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Quantidade.FillWeight = 9.0!
+        Me.Quantidade.HeaderText = "Quantidade"
+        Me.Quantidade.Name = "Quantidade"
+        Me.Quantidade.ReadOnly = True
+        '
+        'Data_validade
+        '
+        Me.Data_validade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Data_validade.FillWeight = 10.0!
+        Me.Data_validade.HeaderText = "Data Validade"
+        Me.Data_validade.Name = "Data_validade"
+        Me.Data_validade.ReadOnly = True
+        '
+        'Data_Att
+        '
+        Me.Data_Att.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Data_Att.FillWeight = 10.0!
+        Me.Data_Att.HeaderText = "Data Atualização"
+        Me.Data_Att.Name = "Data_Att"
+        Me.Data_Att.ReadOnly = True
         '
         'Form_Admin
         '
@@ -2298,14 +2289,6 @@ Partial Class Form_Admin
     Friend WithEvents Label9 As Label
     Friend WithEvents ButtonLogOff As Button
     Friend WithEvents imageProdCatPictureBox As PictureBox
-    Friend WithEvents IDProdutos As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents Preços As DataGridViewTextBoxColumn
-    Friend WithEvents Estoque_min As DataGridViewTextBoxColumn
-    Friend WithEvents Codigo_barra As DataGridViewTextBoxColumn
-    Friend WithEvents Quantidade As DataGridViewTextBoxColumn
-    Friend WithEvents Data_validade As DataGridViewTextBoxColumn
-    Friend WithEvents Data_Att As DataGridViewTextBoxColumn
     Friend WithEvents ID_report As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -2327,4 +2310,12 @@ Partial Class Form_Admin
     Friend WithEvents Label45 As Label
     Friend WithEvents Label43 As Label
     Friend WithEvents Label35 As Label
+    Friend WithEvents IDProdutos As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents Preços As DataGridViewTextBoxColumn
+    Friend WithEvents Estoque_min As DataGridViewTextBoxColumn
+    Friend WithEvents Codigo_barra As DataGridViewTextBoxColumn
+    Friend WithEvents Quantidade As DataGridViewTextBoxColumn
+    Friend WithEvents Data_validade As DataGridViewTextBoxColumn
+    Friend WithEvents Data_Att As DataGridViewTextBoxColumn
 End Class

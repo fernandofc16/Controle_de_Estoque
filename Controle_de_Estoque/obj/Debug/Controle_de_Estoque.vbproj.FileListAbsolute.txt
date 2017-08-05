@@ -74,4 +74,3 @@ C:\Users\ferna\Downloads\Controle_de_Estoque-master (2)\Controle_de_Estoque-mast
 C:\Users\ferna\Downloads\Controle_de_Estoque-master (2)\Controle_de_Estoque-master\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.exe
 C:\Users\ferna\Downloads\Controle_de_Estoque-master (2)\Controle_de_Estoque-master\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.xml
 C:\Users\ferna\Downloads\Controle_de_Estoque-master (2)\Controle_de_Estoque-master\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.pdb
-C:\Users\ferna\Downloads\Controle_de_Estoque-master (2)\Controle_de_Estoque-master\Controle_de_Estoque\obj\Debug\Controle_de_Estoque.vbprojResolveAssemblyReference.cache
